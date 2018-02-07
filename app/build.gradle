@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "kr.co.ac.ezen.kpj.kpj"
-        minSdkVersion 18
+        applicationId "kr.co.ac.ezen.kpj.team"
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
@@ -30,10 +30,13 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     implementation 'com.github.bumptech.glide:glide:3.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
-    compile "org.projectlombok:lombok:1.16.18"
+    compile 'org.projectlombok:lombok:1.16.18'
     annotationProcessor "org.projectlombok:lombok:1.16.18"
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'gun0912.ted:tedpermission:2.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.5.0'
+    compile 'com.nineoldandroids:library:2.4.0'
 }
