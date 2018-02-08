@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
         propagateToolbarState(toolbarIsShown());
     }
-
+//주석주
     @OnClick({R.id.testbtn,R.id.testbtn2})
     public void testbtn(View view){
         switch (view.getId()){
