@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
             @Override
             public void onPageSelected(int i) {
+                showToolbar();
                 propagateToolbarState(toolbarIsShown());
             }
 
