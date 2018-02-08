@@ -19,7 +19,7 @@
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:background="@mipmap/ic_launcher"/>
+        />
 
     <TextView
         android:id="@+id/tx_content"

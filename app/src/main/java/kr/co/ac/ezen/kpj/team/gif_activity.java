@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+
 import kr.co.ac.ezen.kpj.team.DBmanager.DBmanager;
 
 public class gif_activity extends AppCompatActivity {
@@ -25,6 +28,8 @@ public class gif_activity extends AppCompatActivity {
         tx_title = findViewById(R.id.tx_title);
         tx_content = findViewById(R.id.tx_content);
         img_gif = findViewById(R.id.img_gif);
+        GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
+        Glide.with(this).load(R.drawable.test).into(gifImage);
         dbmanager = new DBmanager(gif_activity.this,"SmartPhone.db",null,1);
 
         Intent intent = getIntent();
