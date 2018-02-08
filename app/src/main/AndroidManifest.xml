@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".Fragment.Follow" />
         <activity android:name=".Fragment.ItemList" />
-        <activity android:name=".Fragment.RecommendApp"></activity>
+        <activity android:name=".Fragment.RecommendApp" />
+        <activity android:name=".gif_activity"></activity>
     </application>
 
 </manifest>

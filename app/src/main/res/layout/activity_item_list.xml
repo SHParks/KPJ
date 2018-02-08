@@ -19,24 +19,311 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <include layout="@layout/padding" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:text="목록입니다." />
-            <ImageView
-                android:id="@+id/gifview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="기본사용법"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_1"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/list_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp">
+                            <TextView
+                                android:id="@+id/tx_1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+
+                            <TextView
+                                android:id="@+id/tx_1_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용" />
+                            <TextView
+                                android:id="@+id/tx_1_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="기본설정"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp"
+                            android:id="@+id/list_2">
+                            <TextView
+                                android:id="@+id/tx_2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+                            <TextView
+                                android:id="@+id/tx_2_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용"/>
+                            <TextView
+                                android:id="@+id/tx_2_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="카카오톡"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_3"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp"
+                            android:id="@+id/list_3">
+                            <TextView
+                                android:id="@+id/tx_3_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+
+                            <TextView
+                                android:id="@+id/tx_3_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용" />
+                            <TextView
+                                android:id="@+id/tx_3_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="교통정보검색"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_4"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp"
+                            android:id="@+id/list_4">
+                            <TextView
+                                android:id="@+id/tx_4_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+                            <TextView
+                                android:id="@+id/tx_4_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용"/>
+                            <TextView
+                                android:id="@+id/tx_4_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="인터넷활용"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_5"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp"
+                            android:id="@+id/list_5">
+                            <TextView
+                                android:id="@+id/tx_5_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+                            <TextView
+                                android:id="@+id/tx_5_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용"/>
+                            <TextView
+                                android:id="@+id/tx_5_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="인터넷활용"
+                                android:layout_marginTop="10dp"
+                                android:textSize="30dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <Button
+                                android:id="@+id/btn_6"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dp"
+                            android:orientation="vertical"
+                            android:layout_marginTop="50dp"
+                            android:id="@+id/list_6">
+                            <TextView
+                                android:id="@+id/tx_6_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트폰 구성"/>
+                            <TextView
+                                android:id="@+id/tx_6_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- 스마트 사용"/>
+                            <TextView
+                                android:id="@+id/tx_6_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="- ***"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
         </LinearLayout>
+
+
+
+
+
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
 </RelativeLayout>
