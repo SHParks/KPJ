@@ -1,12 +1,9 @@
 package kr.co.ac.ezen.kpj.team.Fragment;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.app.Fragment;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +15,7 @@ import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kr.co.ac.ezen.kpj.team.R;
+import kr.co.ac.ezen.kpj.team.Utility.InstallCheck;
 
 public class RecommendApp extends Fragment {
 
@@ -42,35 +40,33 @@ public class RecommendApp extends Fragment {
         }
         return rootview;
     }
-    @OnClick({R.id.downYoutube, R.id.downKakaoTalk, R.id.kakaoMap, R.id.downMetro, R.id.downNaver, R.id.downAddressBook})
+    @OnClick({R.id.downYoutube, R.id.downKakaoTalk, R.id.downKakaoMap, R.id.downMetro, R.id.downNaver, R.id.downAddressBook})
     public void onclick(View view){
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-
+        String packageName="";
         switch (view.getId()){
             case R.id.downYoutube:
-                intent.setData(Uri.parse("market://details?id=com.google.android.youtube"));
-                startActivity(intent);
+                packageName = "com.google.android.youtube";
                 break;
             case R.id.downKakaoTalk:
-                intent.setData(Uri.parse("market://details?id=com.kakao.talk"));
-                startActivity(intent);
+                packageName = "com.kakao.talk";
                 break;
             case R.id.downKakaoMap:
-                intent.setData(Uri.parse("market://details?id=net.daum.android.map"));
-                startActivity(intent);
+                packageName = "net.daum.android.map";
                 break;
             case R.id.downMetro:
-                intent.setData(Uri.parse("market://details?id=teamDoppelGanger.SmarterSubway"));
-                startActivity(intent);
+                packageName = "teamDoppelGanger.SmarterSubway";
                 break;
             case R.id.downNaver:
-                intent.setData(Uri.parse("market://details?id=com.nhn.android.search"));
-                startActivity(intent);
+                packageName = "com.nhn.android.search";
                 break;
             case R.id.downAddressBook:
-                intent.setData(Uri.parse("market://details?id=com.nhn.android.addressbookbackup"));
-                startActivity(intent);
+                packageName = "com.nhn.android.addressbookbackup";
                 break;
+        }
+        if (InstallCheck.searchAppPackage(getActivity(),packageName)){
+            InstallCheck.executeLocalAppPackage(getActivity(),packageName);
+        } else {
+            InstallCheck.executeStoreAppPackage(getActivity(),packageName);
         }
     }
 }
