@@ -93,7 +93,6 @@ public class ClearEditText extends AppCompatEditText implements TextWatcher, Vie
         } else {
             return false;
         }
-
     }
 
     @Override
