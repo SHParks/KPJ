@@ -118,8 +118,6 @@ public class RecommendApp extends Fragment {
             case R.id.downdodolkeyboard:
                 packageName = "com.google.android.inputmethod.korean";
                 break;
-
-
         }
 //        if (InstallCheck.searchAppPackage(getActivity(),packageName)){
 //            InstallCheck.executeLocalAppPackage(getActivity(),packageName);
