@@ -22,12 +22,13 @@ import kr.co.ac.ezen.kpj.team.R;
 import kr.co.ac.ezen.kpj.team.gif_activity;
 
 public class ItemList extends Fragment {
-    @BindView(R.id.list_1) LinearLayout list_1;
-    @BindView(R.id.list_2) LinearLayout list_2;
-    @BindView(R.id.list_3) LinearLayout list_3;
-    @BindView(R.id.list_4) LinearLayout list_4;
-    @BindView(R.id.list_5) LinearLayout list_5;
-    @BindView(R.id.list_6) LinearLayout list_6;
+    @BindView(R.id.list_lookaround) LinearLayout list_lookaround;
+    @BindView(R.id.list_basicfunction) LinearLayout list_basicfunction;
+    @BindView(R.id.list_basicsetting) LinearLayout list_basicseting;
+    @BindView(R.id.list_playstore) LinearLayout list_playstore;
+    @BindView(R.id.list_kakaotalk) LinearLayout list_kakaotalk;
+    @BindView(R.id.list_internet) LinearLayout list_internet;
+    @BindView(R.id.list_traffic) LinearLayout list_traffic;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,162 +50,224 @@ public class ItemList extends Fragment {
 
         return rootview;
     }
-    @OnClick({R.id.btn_1,R.id.btn_2,R.id.btn_3,R.id.btn_4,R.id.btn_5,R.id.btn_6})
+    @OnClick({R.id.btn_lookaround,R.id.btn_basicfunction,R.id.btn_basicsetting,R.id.btn_playstore,R.id.btn_kakaotalk,R.id.btn_internet,R.id.btn_traffic})
     public void onclick(View view){
         switch (view.getId()) {
-            case R.id.btn_1:
-                if (list_1.getVisibility() == View.VISIBLE) {
-                    list_1.setVisibility(View.GONE);
-                } else if (list_1.getVisibility() == View.GONE) {
-                    list_1.setVisibility(View.VISIBLE);
+            case R.id.btn_lookaround:
+                if (list_lookaround.getVisibility() == View.VISIBLE) {
+                    list_lookaround.setVisibility(View.GONE);
+                } else if (list_lookaround.getVisibility() == View.GONE) {
+                    list_lookaround.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.btn_2:
-                if(list_2.getVisibility()==View.VISIBLE) {
-                    list_2.setVisibility(View.GONE);
-                }else if(list_2.getVisibility()==View.GONE){
-                    list_2.setVisibility(View.VISIBLE);
+            case R.id.btn_basicfunction:
+                if(list_basicfunction.getVisibility()==View.VISIBLE) {
+                    list_basicfunction.setVisibility(View.GONE);
+                }else if(list_basicfunction.getVisibility()==View.GONE){
+                    list_basicfunction.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.btn_3:
-                if(list_3.getVisibility()==View.VISIBLE) {
-                    list_3.setVisibility(View.GONE);
-                }else if(list_3.getVisibility()==View.GONE){
-                    list_3.setVisibility(View.VISIBLE);
+            case R.id.btn_basicsetting:
+                if(list_basicseting.getVisibility()==View.VISIBLE) {
+                    list_basicseting.setVisibility(View.GONE);
+                }else if(list_basicseting.getVisibility()==View.GONE){
+                    list_basicseting.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.btn_4:
-                if(list_4.getVisibility()==View.VISIBLE) {
-                    list_4.setVisibility(View.GONE);
-                }else if(list_4.getVisibility()==View.GONE){
-                    list_4.setVisibility(View.VISIBLE);
+            case R.id.btn_playstore:
+                if(list_playstore.getVisibility()==View.VISIBLE) {
+                    list_playstore.setVisibility(View.GONE);
+                }else if(list_playstore.getVisibility()==View.GONE){
+                    list_playstore.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.btn_5:
-                if(list_5.getVisibility()==View.VISIBLE) {
-                    list_5.setVisibility(View.GONE);
-                }else if(list_5.getVisibility()==View.GONE){
-                    list_5.setVisibility(View.VISIBLE);
+            case R.id.btn_kakaotalk:
+                if(list_kakaotalk.getVisibility()==View.VISIBLE) {
+                    list_kakaotalk.setVisibility(View.GONE);
+                }else if(list_kakaotalk.getVisibility()==View.GONE){
+                    list_kakaotalk.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.btn_6:
-                if(list_6.getVisibility()==View.VISIBLE) {
-                    list_6.setVisibility(View.GONE);
-                }else if(list_6.getVisibility()==View.GONE){
-                    list_6.setVisibility(View.VISIBLE);
+            case R.id.btn_internet:
+                if(list_internet.getVisibility()==View.VISIBLE) {
+                    list_internet.setVisibility(View.GONE);
+                }else if(list_internet.getVisibility()==View.GONE){
+                    list_internet.setVisibility(View.VISIBLE);
                 } break;
-
+            case R.id.btn_traffic:
+                if(list_traffic.getVisibility()==View.VISIBLE) {
+                    list_traffic.setVisibility(View.GONE);
+                }else if(list_traffic.getVisibility()==View.GONE){
+                    list_traffic.setVisibility(View.VISIBLE);
+                } break;
         }
     }
 
-    @OnClick({R.id.tx_1_1,R.id.tx_1_2,R.id.tx_1_3,R.id.tx_2_1,R.id.tx_2_2,R.id.tx_2_3,R.id.tx_3_1,R.id.tx_3_2,R.id.tx_3_3,R.id.tx_4_1,R.id.tx_4_2,R.id.tx_4_3,R.id.tx_5_1,R.id.tx_5_2,R.id.tx_5_3,R.id.tx_6_1,R.id.tx_6_2,R.id.tx_6_3})
+    @OnClick({R.id.tx_lookaround_hardware,R.id.tx_lookaround_gesture,R.id.tx_basicfunction_contact, R.id.tx_basicfunction_call,
+            R.id.tx_basicfunction_call2,R.id.tx_basicfunction_message,R.id.tx_basicfunction_message2,R.id.tx_basicfunction_camera,
+            R.id.tx_basicfunction_video,R.id.tx_basicfunction_album,R.id.tx_basicsetting_textsize,
+            R.id.tx_basicsetting_brightness,R.id.tx_basicsetting_colouring,R.id.tx_basicsetting_sound,R.id.tx_basicsetting_alarm,R.id.tx_basicsetting_display,
+            R.id.tx_playstore_basic,R.id.tx_playstore_search,R.id.tx_playstore_install,R.id.tx_playstore_delete,R.id.tx_kakaotalk_basic,R.id.tx_kakaotalk_profile,
+            R.id.tx_kakaotalk_text,R.id.tx_kakaotalk_album,R.id.tx_kakaotalk_voice,R.id.tx_kakaotalk_group,R.id.tx_internet_basic,R.id.tx_internet_use,
+            R.id.tx_internet_use2,R.id.tx_internet_favorite,R.id.tx_traffic_basic,R.id.tx_traffic_search,R.id.tx_traffic_subway})
+
     public void onclicku(View view){
         switch (view.getId()) {
-            case R.id.tx_1_1:
+            case R.id.tx_lookaround_hardware:
                 Intent intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",1);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","lookaround");
                 startActivity(intent);
                 break;
-            case R.id.tx_1_2:
+            case R.id.tx_lookaround_gesture:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",1);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","lookaround_gesture");
                 startActivity(intent);
                 break;
-            case R.id.tx_1_3:
+            case R.id.tx_basicfunction_contact:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",1);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","basicfunction_contact");
                 startActivity(intent);
                 break;
-            case R.id.tx_2_1:
+            case R.id.tx_basicfunction_call:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",2);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","basicfunction_call");
                 startActivity(intent);
                 break;
-            case R.id.tx_2_2:
+            case R.id.tx_basicfunction_call2:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",2);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","basicfunction_call2");
                 startActivity(intent);
                 break;
-            case R.id.tx_2_3:
+            case R.id.tx_basicfunction_message:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",2);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","basicfunction_message");
                 startActivity(intent);
                 break;
-            case R.id.tx_3_1:
+            case R.id.tx_basicfunction_message2:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",3);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","basicfunction_message2");
                 startActivity(intent);
                 break;
-            case R.id.tx_3_2:
+            case R.id.tx_basicfunction_camera:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",3);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","basicfunction_camera");
                 startActivity(intent);
                 break;
-            case R.id.tx_3_3:
+            case R.id.tx_basicfunction_video:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",3);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","basicfunction_video");
                 startActivity(intent);
                 break;
-            case R.id.tx_4_1:
+            case R.id.tx_basicfunction_album:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",4);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","basicfunction_album");
                 startActivity(intent);
                 break;
-            case R.id.tx_4_2:
+            case R.id.tx_basicsetting_textsize:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",4);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","basicsetting_textsize");
                 startActivity(intent);
                 break;
-            case R.id.tx_4_3:
+            case R.id.tx_basicsetting_brightness:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",4);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","basicsetting_brightness");
                 startActivity(intent);
                 break;
-            case R.id.tx_5_1:
+            case R.id.tx_basicsetting_colouring:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",5);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","basicsetting_colouring");
                 startActivity(intent);
                 break;
-            case R.id.tx_5_2:
+            case R.id.tx_basicsetting_sound:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",5);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","basicsetting_sound");
                 startActivity(intent);
                 break;
-            case R.id.tx_5_3:
+            case R.id.tx_basicsetting_alarm:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",5);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","basicsetting_alarm");
                 startActivity(intent);
                 break;
-            case R.id.tx_6_1:
+            case R.id.tx_basicsetting_display:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",6);
-                intent.putExtra("id_list",1);
+                intent.putExtra("id","basicsetting_display");
                 startActivity(intent);
                 break;
-            case R.id.tx_6_2:
+            case R.id.tx_playstore_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",6);
-                intent.putExtra("id_list",2);
+                intent.putExtra("id","playstore_basic");
                 startActivity(intent);
                 break;
-            case R.id.tx_6_3:
+            case R.id.tx_playstore_install:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id",6);
-                intent.putExtra("id_list",3);
+                intent.putExtra("id","playstore_install");
+                startActivity(intent);
+                break;
+            case R.id.tx_playstore_delete:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","playstore_delete");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_basic:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","playstore_basic");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_profile:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","kakaotalk_profile");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_text:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","kakaotalk_text");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_album:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","kakaotalk_album");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_voice:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","kakaotalk_voice");
+                startActivity(intent);
+                break;
+            case R.id.tx_kakaotalk_group:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","kakaotalk_group");
+                startActivity(intent);
+                break;
+            case R.id.tx_internet_basic:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","internet_basice");
+                startActivity(intent);
+                break;
+            case R.id.tx_internet_use:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","internet_use");
+                startActivity(intent);
+                break;
+            case R.id.tx_internet_use2:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","internet_use2");
+                startActivity(intent);
+                break;
+            case R.id.tx_internet_favorite:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","internet_favorite");
+                startActivity(intent);
+                break;
+            case R.id.tx_traffic_basic:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","traffic_basic");
+                startActivity(intent);
+                break;
+            case R.id.tx_traffic_search:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","traffic_search");
+                startActivity(intent);
+                break;
+            case R.id.tx_traffic_subway:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","traffic_subway");
                 startActivity(intent);
                 break;
         }
     }
-
-
 }
