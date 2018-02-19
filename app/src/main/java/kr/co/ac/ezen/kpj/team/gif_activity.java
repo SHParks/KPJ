@@ -33,38 +33,46 @@ public class gif_activity extends AppCompatActivity {
         img_gif = findViewById(R.id.img_gif);
         dbmanager = new DBmanager(gif_activity.this,"SmartPhone.db",null,1);
 
-        /*Intent intent = getIntent();
+        Intent intent = getIntent();
         id = intent.getStringExtra("id");
         String code = id;
         Log.d("code",code);
-        if(code.equals("1_1")) {
+        if(code.equals("lookaround")) {
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
+            Glide.with(this).load(R.drawable.basicfunction_album).into(gifImage);
             tx_title.setText("기억의 습작");
             tx_content.setText("냥냥다아다아다");
-        } else if(code.equals("1_2")){
+        } else if(code.equals("lookaround_gesture")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.addalarm).into(gifImage);
+            Glide.with(this).load(R.drawable.basicfunction_message).into(gifImage);
             tx_title.setText("아브라카다브라");
             tx_content.setText("다리밑고양이");
-        } else if(code.equals(1_3)){
+        } else if(code.equals("basicfunction_contact")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
-        }else if(code.equals(2_1)){
+            Glide.with(this).load(R.drawable.basicfunction_album).into(gifImage);
+        }else if(code.equals("basicfunction_call")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
-        } else if(code.equals(2_2)){
+            Glide.with(this).load(R.drawable.basicfunction_call).into(gifImage);
+            tx_title.setText("기본기능-전화걸기");
+            tx_content.setText("1. 전화버튼을 누른다\n2. 번호를 입력한다\n3. 통화버튼을 누른다");
+
+        } else if(code.equals("basicfunction_call2")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
-        }else if(code.equals(2_3)){
+            Glide.with(this).load(R.drawable.basicfunction_call2).into(gifImage);
+            tx_title.setText("연락처를 통한 전화걸기");
+            tx_content.setText("1. 연락처를 누른다\n2. 번호를 입력한다\n3. 통화버튼을 누른다");
+
+        }else if(code.equals("basicfunction_message")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
-        } else if(code.equals(3_1)){
+            Glide.with(this).load(R.drawable.basicfunction_message).into(gifImage);
+            tx_title.setText("메세지 보내기");
+            tx_content.setText("1. 메세지를 누른다\n2. 오른쪽\n3. 통화버튼을 누른다");
+
+        } else if(code.equals("basicfunction_message2")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.address).into(gifImage);
+            Glide.with(this).load(R.drawable.basicfunction_message2).into(gifImage);
         }
 
-*/
 
        /* img = dbmanager.getImg(id,id_list);
         content = dbmanager.getContent(id,id_list);
