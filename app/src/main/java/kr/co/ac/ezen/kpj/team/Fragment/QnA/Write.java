@@ -103,10 +103,25 @@ public class Write extends AppCompatActivity {
 
     @OnClick(R.id.btn_write)
     public void onClickBtnWrite(View view) {
+
         String title = et_title.getText().toString();
         String writer = et_writer.getText().toString();
         String content = et_content.getText().toString();
         String pw = et_pw.getText().toString();
+
+        if (title.equals("")){
+            Toast.makeText(this, "제목을 입력 해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (writer.equals("")) {
+            Toast.makeText(this, "이름을 입력 해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (content.equals("")) {
+            Toast.makeText(this, "내용을 입력 해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (writer.equals("")) {
+            Toast.makeText(this, "비밀번호를 입력 해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         titleBody =
                 RequestBody.create(MediaType.parse("text/plain"),
