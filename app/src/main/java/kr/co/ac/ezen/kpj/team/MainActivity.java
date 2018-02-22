@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
         ViewCompat.setElevation(mHeaderView, getResources().getDimension(R.dimen.toolbar_elevation));
         mToolbarView = findViewById(R.id.toolbar);
         mPagerAdapter = new NavigationAdapter(getSupportFragmentManager());
+
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
 
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
         propagateToolbarState(toolbarIsShown());
     }
+
+
 //주석주
     @OnClick({R.id.testbtn,R.id.testbtn2})
     public void testbtn(View view){
@@ -249,4 +252,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
      * {@linkplain #createItem(int)} should be modified if you use this example for your app.
      */
 
+
 }
+
+

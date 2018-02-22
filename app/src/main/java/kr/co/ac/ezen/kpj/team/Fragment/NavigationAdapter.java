@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 
 import com.github.ksoichiro.android.observablescrollview.CacheFragmentStatePagerAdapter;
 
+import kr.co.ac.ezen.kpj.team.Fragment.QnA.Index;
+
 
 /**
  * Created by Administrator on 2018-02-07.
@@ -13,7 +15,7 @@ import com.github.ksoichiro.android.observablescrollview.CacheFragmentStatePager
 
 public class NavigationAdapter extends CacheFragmentStatePagerAdapter {
 
-    private static final String[] TITLES = new String[]{"목록", "따라하기","추천앱"};
+    private static final String[] TITLES = new String[]{"목록", "따라하기","QnA","추천앱"};
 
     private int mScrollY;
 
@@ -47,7 +49,15 @@ public class NavigationAdapter extends CacheFragmentStatePagerAdapter {
                 }
                 break;
             }
-            case 2:
+            case 2: {
+                f = new Index();
+                if (0 < mScrollY) {
+                    Bundle args = new Bundle();
+                }
+                break;
+            }
+
+            case 3:
             default: {
                 f = new RecommendApp();
                 if (0 < mScrollY) {
@@ -68,6 +78,7 @@ public class NavigationAdapter extends CacheFragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         return TITLES[position];
     }
+
 
 
 
