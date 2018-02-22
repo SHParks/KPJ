@@ -52,6 +52,7 @@ public class Index extends Fragment {
 
     }
 
+
     @Override
     public void onResume() {
         super.onResume();

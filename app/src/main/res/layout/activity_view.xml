@@ -149,6 +149,7 @@
                         android:layout_height="wrap_content" />
                     <EditText
                         android:id="@+id/cmt_pw"
+                        android:inputType="textPassword"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

@@ -37,11 +37,24 @@
 
     </LinearLayout>
 
-    <Button
-        android:text="삭제"
-        android:id="@+id/del_btn"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/del_cancel"
+            android:text="취소"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="삭제"
+            android:id="@+id/del_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
 
 
 </LinearLayout>

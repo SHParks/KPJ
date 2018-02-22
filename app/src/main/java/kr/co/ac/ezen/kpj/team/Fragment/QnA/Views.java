@@ -246,6 +246,7 @@ public class Views extends AppCompatActivity {
         intent2.putExtra("id",id);
         intent2.putExtra("content",title);
         startActivityForResult(intent2,1);
+
     }
     @OnClick(R.id.item_edit)
     public void setItem_edit(View view){
@@ -267,8 +268,11 @@ public class Views extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1){
             if (resultCode == RESULT_OK){
+                Log.d("shb","글 삭제 완료");
                 finish();
             }
+
+
 //            else if (resultCode == 1){
 //                Log.d("shb 댓글삭제","완료");
 //                getCmts(id);

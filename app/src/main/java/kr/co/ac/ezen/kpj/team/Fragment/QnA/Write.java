@@ -118,7 +118,7 @@ public class Write extends AppCompatActivity {
         } else if (content.equals("")) {
             Toast.makeText(this, "내용을 입력 해 주세요.", Toast.LENGTH_SHORT).show();
             return;
-        } else if (writer.equals("")) {
+        } else if (pw.equals("")) {
             Toast.makeText(this, "비밀번호를 입력 해 주세요.", Toast.LENGTH_SHORT).show();
             return;
         }

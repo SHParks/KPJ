@@ -28,6 +28,8 @@ public class Delete extends AppCompatActivity {
     TextView del_type;
     @BindView(R.id.del_pw)
     EditText del_pw;
+    @BindView(R.id.del_cancel)
+    Button del_cancel;
     String type;
     String id;
 
@@ -71,11 +73,11 @@ public class Delete extends AppCompatActivity {
                         Toast.makeText(Delete.this, "비밀번호가 다릅니다.", Toast.LENGTH_SHORT).show();
                     } else if (alert.equals("1")){
                         Toast.makeText(Delete.this, "글이 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
-                        finish();
                         setResult(RESULT_OK);
+                        finish();
                     } else if (alert.equals("2")){
                         Toast.makeText(Delete.this, "댓글이 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
-                        setResult(1);
+                        //setResult(1);
                         finish();
                     }
                 } else {
@@ -121,5 +123,10 @@ public class Delete extends AppCompatActivity {
 //                t.printStackTrace();
 //            }
 //        });
+    }
+
+    @OnClick(R.id.del_cancel)
+    public void del_cancel (){
+        finish();
     }
 }
