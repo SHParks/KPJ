@@ -110,7 +110,7 @@ public class ItemList extends Fragment {
         switch (view.getId()) {
             case R.id.tx_lookaround_hardware:
                 Intent intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","lookaround");
+                intent.putExtra("id","lookaround_hardware");
                 startActivity(intent);
                 break;
             case R.id.tx_lookaround_gesture:
@@ -146,6 +146,7 @@ public class ItemList extends Fragment {
             case R.id.tx_basicfunction_camera:
                 intent = new Intent(getActivity(),gif_activity.class);
                 intent.putExtra("id","basicfunction_camera");
+                intent.putExtra("id2","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_video:
@@ -156,6 +157,7 @@ public class ItemList extends Fragment {
             case R.id.tx_basicfunction_album:
                 intent = new Intent(getActivity(),gif_activity.class);
                 intent.putExtra("id","basicfunction_album");
+                intent.putExtra("id2","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_textsize:

@@ -1,8 +1,10 @@
 package kr.co.ac.ezen.kpj.team.DBmanager;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Administrator on 2018-02-08.
@@ -19,52 +21,71 @@ public class DBmanager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase ) {
         String query = "CREATE TABLE Category (id	INTEGER PRIMARY KEY AUTOINCREMENT,category TEXT,title TEXT,content TEXT);";
         sqLiteDatabase.execSQL(query);
-        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround','hardware','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround','gesture','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround_hardware','외부구조와 버튼','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround_gesture','스마트폰 사용법','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','contact','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','call','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','call2','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','message','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','message2','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','camera','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','video','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction','album','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_contact','연락처 저장','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_call','전화걸기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_call2','연락처를 통한 전화걸기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_message','문자보내기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_message2','연락처를 통한 문자보내기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_camera','사진촬영','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_video','동영상촬영','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_album','앨범보기','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','textsize','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','brightness','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','colouring','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','sound','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','alarm','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting','display','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_textsize','글자크기 설정','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_brightness','화면밝기 설정','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_colouring','벨소리 변경','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_sound','음량크기 설정','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_alarm','알람 설정','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'basicsetting_display','배경화면 설정','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore','basic','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore','search','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore','install','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore','delete','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore_basic','기본설명','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore_search','구글스토어 접속/검색','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore_install','어플리케이션 설치','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'playstore_delete','어플리케이션 삭제','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','basic','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','profile','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','text','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','album','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','voice','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk','group','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_basic','기본설명','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_profile','프로필등록','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_text','문자보내기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_album','사진보내기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_voice','음성보내기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'kakaotalk_group','단체카톡방 초대','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'internet','basic','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'internet','use','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'internet','use2','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'internet','favorite','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'internet_basic','기본설명','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'internet_use','기본인터넷 사용','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'internet_use2','어플리케이션을 활용한 검색','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'internet_favorite','즐겨찾기 등록','아직내용은 미정');");
 
-        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic','basic','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic','search','아직내용은 미정');");
-        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic','subway','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic_basic','기본설명','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic_search','어플리케이션을 활용한 길찾기','아직내용은 미정');");
+        sqLiteDatabase.execSQL("Insert into Category values(null,'traffic_subway','지하철 노선도 검색','아직내용은 미정');");
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
 
+    public String gettitle(String code) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Category where category='"+code+"'" ,null);
+        String title= "";
+        while (cursor.moveToNext()) {//컬럼의 번째가 i이다.
+            title = cursor.getString(2);
+        }
+        cursor.close();
+        Log.d("jpjp",title);
+        return title;
+    }
 
-
+    public String getcontent(String code) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Category where category='"+code+"'" ,null);
+        String content= "";
+        while (cursor.moveToNext()) {//컬럼의 번째가 i이다.
+            content = cursor.getString(3);
+        }
+        cursor.close();
+        return content;
+    }
 }
