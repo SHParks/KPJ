@@ -195,6 +195,11 @@ public class ItemList extends Fragment {
                 intent.putExtra("id","playstore_basic");
                 startActivity(intent);
                 break;
+            case R.id.tx_playstore_search:
+                intent = new Intent(getActivity(),gif_activity.class);
+                intent.putExtra("id","playstore_search");
+                startActivity(intent);
+                break;
             case R.id.tx_playstore_install:
                 intent = new Intent(getActivity(),gif_activity.class);
                 intent.putExtra("id","playstore_install");

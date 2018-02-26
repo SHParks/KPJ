@@ -286,7 +286,7 @@ public class gif_activity extends AppCompatActivity {
 
         } else if(code.equals("traffic_search")){
             GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
-            Glide.with(this).load(R.drawable.traffic_search).into(gifImage);
+            Glide.with(this).load(R.drawable.traffic_search).into(gifImage);   //gif 다시 따야함
             title= dbmanager.gettitle(code);
             content=dbmanager.getcontent(code);
             tx_title.setText(title);
