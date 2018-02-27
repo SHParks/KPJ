@@ -33,6 +33,7 @@ import kr.co.ac.ezen.kpj.team.Adapter.SearchAdapter;
 import kr.co.ac.ezen.kpj.team.Beans.ItemList;
 import kr.co.ac.ezen.kpj.team.DBmanager.DBmanager;
 import kr.co.ac.ezen.kpj.team.Fragment.NavigationAdapter;
+import kr.co.ac.ezen.kpj.team.Utility.BackPressCloseHandler;
 import kr.co.ac.ezen.kpj.team.Utility.SlidingTabLayout;
 
 public class MainActivity extends AppCompatActivity implements ObservableScrollViewCallbacks {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     SearchAdapter searchAdapter;
     ArrayList<ItemList> searchList = new ArrayList<>();
     DBmanager dbmanager = new DBmanager(MainActivity.this,"SmartPhone.db",null,1);
-
+    private BackPressCloseHandler backPressCloseHandler;
     @BindView(R.id.sliding_tabs) SlidingTabLayout sliding_tabs;
 
     @Override
@@ -76,6 +77,11 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
         slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.accent));
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(mPager);
+
+
+
+
+
 
         // When the page is selected, other fragments' scrollY should be adjusted
         // according to the toolbar status(shown/hidden)
@@ -154,12 +160,23 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 //    }
 
 
-//주석주
+    @Override
+    public void onBackPressed() {
+        if (testedit.getVisibility() == View.VISIBLE){
+            sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
+            testedit.setVisibility(View.GONE);
+            selectpage.setVisibility(View.GONE);
+            testedit.setText("");
+        } else {
+            backPressCloseHandler.onBackPressed();
+        }
+    }
+
+    //주석주
     @OnClick(R.id.testbtn)
     public void testbtn(View view){
                 if (testedit.getVisibility() == View.GONE){
                     testedit.setVisibility(View.VISIBLE);
-                    Log.d("ksj","아이냄새나");
                     sliding_tabs.setVisibility(SlidingTabLayout.GONE);
                     selectpage.setVisibility(View.VISIBLE);
                 } else {
