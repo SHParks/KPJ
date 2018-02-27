@@ -14,11 +14,25 @@
         android:layout_height="match_parent"
         android:paddingTop="@dimen/tab_height">
 
+
+
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+
+            <ListView
+                android:id="@+id/selectpage"
+                android:visibility="gone"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
+
     </RelativeLayout>
+
+
 
     <LinearLayout
         android:id="@+id/header"
@@ -26,6 +40,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:orientation="vertical">
+
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -49,23 +64,21 @@
                     android:text="검색"
                     android:id="@+id/testbtn"
                     android:layout_marginRight="20dp"
-                    android:layout_toLeftOf="@+id/testbtn2"
-                    android:layout_centerVertical="true"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp" />
-                <TextView
-                    android:text="출력"
-                    android:id="@+id/testbtn2"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_width="30dp"
                     android:layout_height="30dp" />
+
             </RelativeLayout>
+
         </android.support.v7.widget.Toolbar>
+
+
 
 
         <kr.co.ac.ezen.kpj.team.Utility.SlidingTabLayout
             android:id="@+id/sliding_tabs"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tab_height"
             android:background="#dadada" />
@@ -73,4 +86,8 @@
 
     </LinearLayout>
 
+
+
+
 </RelativeLayout>
+

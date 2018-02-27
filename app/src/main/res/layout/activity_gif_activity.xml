@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="kr.co.ac.ezen.kpj.team.gif_activity">
@@ -13,20 +14,32 @@
         android:text="기본설정 - 전화걸기"
         android:textSize="25dp"/>
 
-    <ImageView
-        android:id="@+id/img_gif"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tx_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="20dp"
-        android:text="1. 휴대폰 설정화면에 들어간다.\n2. 설정화면에서 디스플레이 장면 탭하기"/>
 
-</RelativeLayout>
+            <ImageView
+                android:id="@+id/img_gif"
+                android:layout_width="370dp"
+                android:layout_height="500dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                />
+
+            <TextView
+                android:id="@+id/tx_content"
+                android:layout_below="@+id/img_gif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="1. 휴대폰 설정화면에 들어간다.\n2. 설정화면에서 디스플레이 장면 탭하기"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

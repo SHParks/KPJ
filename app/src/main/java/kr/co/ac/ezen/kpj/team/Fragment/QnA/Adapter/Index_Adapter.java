@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -94,6 +95,6 @@ public class Index_Adapter extends BaseAdapter {
 
     public class Holder{
         TextView item_id,item_name,item_title;
-        LinearLayout item_layout;
+        RelativeLayout item_layout;
     }
 }

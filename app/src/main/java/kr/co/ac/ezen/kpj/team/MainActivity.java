@@ -1,13 +1,18 @@
 package kr.co.ac.ezen.kpj.team;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,9 +23,15 @@ import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnTextChanged;
+import kr.co.ac.ezen.kpj.team.Adapter.SearchAdapter;
+import kr.co.ac.ezen.kpj.team.Beans.ItemList;
+import kr.co.ac.ezen.kpj.team.DBmanager.DBmanager;
 import kr.co.ac.ezen.kpj.team.Fragment.NavigationAdapter;
 import kr.co.ac.ezen.kpj.team.Utility.SlidingTabLayout;
 
@@ -32,11 +43,15 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     private NavigationAdapter mPagerAdapter;
     @BindView(R.id.testbtn)
     TextView testbtn;
-    @BindView(R.id.testbtn2)
-    TextView testbtn2;
     @BindView(R.id.testedit)
     EditText testedit;
+    @BindView(R.id.selectpage)
+    ListView selectpage;
+    SearchAdapter searchAdapter;
+    ArrayList<ItemList> searchList = new ArrayList<>();
+    DBmanager dbmanager = new DBmanager(MainActivity.this,"SmartPhone.db",null,1);
 
+    @BindView(R.id.sliding_tabs) SlidingTabLayout sliding_tabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +68,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mPagerAdapter);
+
+
 
         SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
         slidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
@@ -79,28 +96,79 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
         });
 
         propagateToolbarState(toolbarIsShown());
+
+
+
+
+        testedit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (testedit.getText().toString().equals("")){
+                    selectpage.setVisibility(View.GONE);
+                    sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
+                    //searchList = new ArrayList<>();
+                } else {
+                    if (dbmanager.getSearchList(testedit.getText().toString()) != null) {
+                        selectpage.setVisibility(View.VISIBLE);
+                        sliding_tabs.setVisibility(SlidingTabLayout.GONE);
+                        searchList = dbmanager.getSearchList(testedit.getText().toString());
+                        searchAdapter = new SearchAdapter(searchList, MainActivity.this);
+                        selectpage.setAdapter(searchAdapter);
+                    } else {
+                        selectpage.setVisibility(View.VISIBLE);
+                        sliding_tabs.setVisibility(SlidingTabLayout.GONE);
+                        searchList = new ArrayList<>();
+                        searchAdapter = new SearchAdapter(searchList, MainActivity.this);
+                        selectpage.setAdapter(searchAdapter);
+                    }
+                }
+
+            }
+        });
     }
+
+//    @OnTextChanged(R.id.testedit)
+//    public void testedit(){
+//        if (testedit.getText().toString().equals("")){
+//            selectpage.setVisibility(View.GONE);
+//            //searchList = new ArrayList<>();
+//        } else {
+//            if (dbmanager.getSearchList(testedit.getText().toString()) != null) {
+//                selectpage.setVisibility(View.VISIBLE);
+//                searchList = dbmanager.getSearchList(testedit.getText().toString());
+//                searchAdapter = new SearchAdapter(searchList, MainActivity.this);
+//                selectpage.setAdapter(searchAdapter);
+//            }
+//        }
+//    }
 
 
 //주석주
-    @OnClick({R.id.testbtn,R.id.testbtn2})
+    @OnClick(R.id.testbtn)
     public void testbtn(View view){
-        switch (view.getId()){
-            case R.id.testbtn:
                 if (testedit.getVisibility() == View.GONE){
                     testedit.setVisibility(View.VISIBLE);
+                    Log.d("ksj","아이냄새나");
+                    sliding_tabs.setVisibility(SlidingTabLayout.GONE);
+                    selectpage.setVisibility(View.VISIBLE);
                 } else {
+                    sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     testedit.setVisibility(View.GONE);
+                    selectpage.setVisibility(View.GONE);
+                    testedit.setText("");
                 }
-                break;
-            case R.id.testbtn2:
-                if (testedit.getText().toString().length()>0){
-                    Toast.makeText(this, testedit.getText().toString(), Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(this, "입력된 문자가 없습니다.", Toast.LENGTH_SHORT).show();
-                }
-                break;
-        }
+
     }
 
 

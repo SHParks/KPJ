@@ -110,164 +110,164 @@ public class ItemList extends Fragment {
         switch (view.getId()) {
             case R.id.tx_lookaround_hardware:
                 Intent intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","lookaround_hardware");
+                intent.putExtra("code","lookaround_hardware");
                 startActivity(intent);
                 break;
             case R.id.tx_lookaround_gesture:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","lookaround_gesture");
+                intent.putExtra("code","lookaround_gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_contact:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_contact");
+                intent.putExtra("code","basicfunction_contact");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_call:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_call");
+                intent.putExtra("code","basicfunction_call");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_call2:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_call2");
+                intent.putExtra("code","basicfunction_call2");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_message:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_message");
+                intent.putExtra("code","basicfunction_message");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_message2:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_message2");
+                intent.putExtra("code","basicfunction_message2");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_camera:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_camera");
-                intent.putExtra("id2","gesture");
+                intent.putExtra("code","basicfunction_camera");
+                intent.putExtra("code","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_video:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_video");
+                intent.putExtra("code","basicfunction_video");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_album:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicfunction_album");
-                intent.putExtra("id2","gesture");
+                intent.putExtra("code1","basicfunction_album");
+                intent.putExtra("code2","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_textsize:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_textsize");
+                intent.putExtra("code","basicsetting_textsize");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_brightness:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_brightness");
+                intent.putExtra("code","basicsetting_brightness");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_colouring:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_colouring");
+                intent.putExtra("code","basicsetting_colouring");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_sound:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_sound");
+                intent.putExtra("code","basicsetting_sound");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_alarm:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_alarm");
+                intent.putExtra("code","basicsetting_alarm");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_display:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","basicsetting_display");
+                intent.putExtra("code","basicsetting_display");
                 startActivity(intent);
                 break;
             case R.id.tx_playstore_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","playstore_basic");
+                intent.putExtra("code","playstore_basic");
                 startActivity(intent);
                 break;
             case R.id.tx_playstore_install:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","playstore_install");
+                intent.putExtra("code","playstore_install");
                 startActivity(intent);
                 break;
             case R.id.tx_playstore_delete:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","playstore_delete");
+                intent.putExtra("code","playstore_delete");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","playstore_basic");
+                intent.putExtra("code","playstore_basic");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_profile:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","kakaotalk_profile");
+                intent.putExtra("code","kakaotalk_profile");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_text:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","kakaotalk_text");
+                intent.putExtra("code","kakaotalk_text");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_album:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","kakaotalk_album");
+                intent.putExtra("code","kakaotalk_album");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_voice:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","kakaotalk_voice");
+                intent.putExtra("code","kakaotalk_voice");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_group:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","kakaotalk_group");
+                intent.putExtra("code","kakaotalk_group");
                 startActivity(intent);
                 break;
             case R.id.tx_internet_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","internet_basice");
+                intent.putExtra("code","internet_basice");
                 startActivity(intent);
                 break;
             case R.id.tx_internet_use:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","internet_use");
+                intent.putExtra("code","internet_use");
                 startActivity(intent);
                 break;
             case R.id.tx_internet_use2:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","internet_use2");
+                intent.putExtra("code","internet_use2");
                 startActivity(intent);
                 break;
             case R.id.tx_internet_favorite:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","internet_favorite");
+                intent.putExtra("code","internet_favorite");
                 startActivity(intent);
                 break;
             case R.id.tx_traffic_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","traffic_basic");
+                intent.putExtra("code","traffic_basic");
                 startActivity(intent);
                 break;
             case R.id.tx_traffic_search:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","traffic_search");
+                intent.putExtra("code","traffic_search");
                 startActivity(intent);
                 break;
             case R.id.tx_traffic_subway:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","traffic_subway");
+                intent.putExtra("code","traffic_subway");
                 startActivity(intent);
                 break;
         }
