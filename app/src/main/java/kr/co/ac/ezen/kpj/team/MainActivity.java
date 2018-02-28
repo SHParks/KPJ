@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     ImageView logo;
     @BindView(R.id.appname)
     TextView appname;
+    boolean focus = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,22 +183,27 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     //주석주
     @OnClick(R.id.selbtn)
     public void selbtn(View view){
-                if (textedit.getVisibility() == View.GONE){
+                if (textedit.getVisibility() == View.GONE){ // 에디트 텍스트가 숨겨져 있을때
                     textedit.setVisibility(View.VISIBLE);
                     sliding_tabs.setVisibility(SlidingTabLayout.GONE);
                     selectpage.setVisibility(View.VISIBLE);
                     logo.setVisibility(View.GONE);
                     appname.setVisibility(View.GONE);
-                } else {
+                    InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                } else { //에디트 텍스트가 보일 때
                     sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     textedit.setVisibility(View.GONE);
                     selectpage.setVisibility(View.GONE);
                     textedit.setText("");
                     logo.setVisibility(View.VISIBLE);
                     appname.setVisibility(View.VISIBLE);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 }
 
     }
+
 
 
     @Override
