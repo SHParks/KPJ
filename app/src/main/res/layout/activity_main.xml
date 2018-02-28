@@ -55,6 +55,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
+                <kr.co.ac.ezen.kpj.team.Utility.ClearEditText
+                    android:id="@+id/textedit"
+                    android:layout_width="250dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content" />
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_centerVertical="true"
@@ -71,12 +77,6 @@
                     android:layout_width="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_height="match_parent" />
-
-                <kr.co.ac.ezen.kpj.team.Utility.ClearEditText
-                    android:id="@+id/textedit"
-                    android:layout_width="250dp"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:text="검색"
