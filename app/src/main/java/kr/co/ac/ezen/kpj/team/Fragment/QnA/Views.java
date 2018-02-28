@@ -38,7 +38,7 @@ public class Views extends AppCompatActivity {
     @BindView(R.id.item_name) TextView item_name;
     @BindView(R.id.item_title) TextView item_title;
     @BindView(R.id.item_content) TextView item_content;
-    @BindView(R.id.item_pw) TextView item_pw;
+    /*@BindView(R.id.item_pw) TextView item_pw;*/
     @BindView(R.id.item_date) TextView item_date;
     @BindView(R.id.item_del) Button item_del;
     @BindView(R.id.item_ip) TextView item_ip;
@@ -138,15 +138,17 @@ public class Views extends AppCompatActivity {
             public void onResponse(Call<Board_Item> call, Response<Board_Item> response) {
                 if (response.isSuccessful()) {
                     item = response.body();
-                    item_id.setText("id : "+item.getId());
-                    item_name.setText("글쓴이 : "+item.getName());
+                    item_id.setText("id:" +item.getId());
+                    item_name.setText(item.getName());
                     title = item.getTitle();
-                    item_title.setText("제목: "+title);
+                    item_title.setText(title);
                     content = item.getContent();
-                    item_content.setText("내용 : "+content);
+                    item_content.setText(content);
                     pw = item.getPw();
-                    item_pw.setText("패스워드 : "+pw);
-                    item_ip.setText("IP : "+item.getIp());
+                    /*item_pw.setText("패스워드 : "+pw);*/
+                    String[] ipcut = item.getIp().split("\\.");
+                    String moip = ipcut[0] +"." +ipcut[1]+".*.*";
+                    item_ip.setText(moip);
 
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd", Locale.KOREA);
                     String dtime = formatter.format(item.getWritedate());
@@ -224,6 +226,9 @@ public class Views extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(Views.this, "댓글 작성 완료", Toast.LENGTH_SHORT).show();
                     getCmts(id);
+                    cmt_name.setText("");
+                    cmt_pw.setText("");
+                    cmt_content.setText("");
                 } else {
                     Log.d("shb","fail");
                     Toast.makeText(Views.this, "서버 오류", Toast.LENGTH_SHORT).show();

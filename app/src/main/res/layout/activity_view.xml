@@ -19,8 +19,19 @@
                 android:id="@+id/item_id"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <TextView
+                android:id="@+id/item_title"
+                android:hint="제목"
+                android:textSize="25dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             <View
                 android:background="#000000"
                 android:layout_width="match_parent"
@@ -28,48 +39,14 @@
             <TextView
                 android:id="@+id/item_name"
                 android:layout_marginBottom="10dp"
+                android:hint="작성자"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <View
-                android:background="#000000"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
-            <TextView
-                android:id="@+id/item_title"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <View
-                android:background="#000000"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
-            <TextView
-                android:id="@+id/item_content"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <View
-                android:background="#000000"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
-            <TextView
-                android:id="@+id/item_pw"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <View
-                android:background="#000000"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
             <TextView
                 android:id="@+id/item_date"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <View
-                android:background="#000000"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"/>
             <TextView
                 android:id="@+id/item_ip"
                 android:layout_marginBottom="10dp"
@@ -79,10 +56,41 @@
                 android:background="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
+            <!--<TextView
+                android:id="@+id/item_pw"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>-->
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <TextView
+                android:id="@+id/item_content"
+                android:layout_marginBottom="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--<View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>-->
             <ImageView
                 android:id="@+id/item_image"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                />
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                />
             <Button
                 android:id="@+id/item_down"
                 android:text="다운로드"
@@ -114,6 +122,10 @@
 
             </LinearLayout>
 
+            <View
+                android:background="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
