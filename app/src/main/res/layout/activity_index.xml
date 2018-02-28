@@ -16,7 +16,7 @@
         android:fillViewport="true"
         android:overScrollMode="never">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -26,8 +26,13 @@
             <Button
                 android:text="글쓰기"
                 android:id="@+id/move_write"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                />
 
             <ListView
                 android:id="@+id/index_list"
@@ -37,7 +42,7 @@
             </ListView>
 
 
-        </LinearLayout>
+        </RelativeLayout>
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
 
 

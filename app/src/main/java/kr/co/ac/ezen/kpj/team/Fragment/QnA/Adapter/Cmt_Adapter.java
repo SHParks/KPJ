@@ -66,7 +66,10 @@ public class Cmt_Adapter extends BaseAdapter {
         final Board_Comment tmp = (Board_Comment) getItem(position);
         holder.cmt_name.setText(tmp.getCmt_name());
         holder.cmt_content.setText(tmp.getCmt_content());
-        holder.cmt_ip.setText(tmp.getCmt_ip());
+        String[] ipcut = tmp.getCmt_ip().split("\\.");
+        String cmt_moip = ipcut[0] +"." +ipcut[1]+".*.*";
+        holder.cmt_ip.setText(cmt_moip);
+//        holder.cmt_ip.setText(tmp.getCmt_ip());
         holder.cmt_del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
