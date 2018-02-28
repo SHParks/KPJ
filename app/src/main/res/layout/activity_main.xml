@@ -59,7 +59,8 @@
                     android:id="@+id/textedit"
                     android:layout_width="250dp"
                     android:visibility="gone"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    />
 
                 <ImageView
                     android:id="@+id/logo"

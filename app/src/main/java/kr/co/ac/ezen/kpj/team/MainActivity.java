@@ -191,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
                     appname.setVisibility(View.GONE);
                     InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+                    textedit.requestFocus();
                 } else { //에디트 텍스트가 보일 때
                     sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     textedit.setVisibility(View.GONE);
