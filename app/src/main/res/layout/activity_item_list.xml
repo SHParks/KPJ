@@ -28,9 +28,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        >
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
@@ -46,7 +49,7 @@
                                 android:id="@+id/btn_lookaround"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
+                                android:background="@drawable/down"
                                 android:layout_marginTop="10dp"
                                 android:layout_marginLeft="5dp"/>
                         </LinearLayout>
@@ -74,6 +77,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <LinearLayout
@@ -148,6 +152,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <LinearLayout
@@ -215,59 +220,69 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/list_kakaotalk"
+                        android:layout_toEndOf="@+id/list_kakaotalk"
+                        android:background="@drawable/main_list">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="플레이스토어(어플) 활용법"
+                                android:layout_marginLeft="20dp"
                                 android:layout_marginTop="10dp"
-                                android:textSize="30dp"
-                                android:layout_marginLeft="20dp"/>
+                                android:text="플레이스토어(어플) 활용법"
+                                android:textSize="30dp" />
 
                             <Button
                                 android:id="@+id/btn_playstore"
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
+                                android:background="@mipmap/ic_launcher_round" />
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/list_playstore"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
-                            android:orientation="vertical"
                             android:layout_marginTop="50dp"
-                            android:visibility="gone"
-                            android:id="@+id/list_playstore">
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
                             <TextView
                                 android:id="@+id/tx_playstore_basic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 기본설명"/>
+                                android:text="- 기본설명" />
+
                             <TextView
                                 android:id="@+id/tx_playstore_search"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 구글스토어 접속/검색"/>
+                                android:text="- 구글스토어 접속/검색" />
+
                             <TextView
                                 android:id="@+id/tx_playstore_install"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 어플리케이션 설치"/>
+                                android:text="- 어플리케이션 설치" />
+
                             <TextView
                                 android:id="@+id/tx_playstore_delete"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 어플리케이션 삭제"/>
+                                android:text="- 어플리케이션 삭제" />
                         </LinearLayout>
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <LinearLayout
@@ -333,6 +348,7 @@
                         </LinearLayout>
                     </RelativeLayout>
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <LinearLayout
@@ -387,6 +403,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:background="@drawable/main_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <LinearLayout
