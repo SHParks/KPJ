@@ -42,17 +42,21 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     private int mBaseTranslationY;
     private ViewPager mPager;
     private NavigationAdapter mPagerAdapter;
-    @BindView(R.id.testbtn)
-    TextView testbtn;
-    @BindView(R.id.testedit)
-    EditText testedit;
+    @BindView(R.id.selbtn)
+    TextView selbtn;
+    @BindView(R.id.textedit)
+    EditText textedit;
     @BindView(R.id.selectpage)
     ListView selectpage;
     SearchAdapter searchAdapter;
     ArrayList<ItemList> searchList = new ArrayList<>();
     DBmanager dbmanager = new DBmanager(MainActivity.this,"SmartPhone.db",null,1);
-    private BackPressCloseHandler backPressCloseHandler;
+    private BackPressCloseHandler backPressCloseHandler = new BackPressCloseHandler(this);
     @BindView(R.id.sliding_tabs) SlidingTabLayout sliding_tabs;
+    @BindView(R.id.logo)
+    ImageView logo;
+    @BindView(R.id.appname)
+    TextView appname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
 
 
-        testedit.addTextChangedListener(new TextWatcher() {
+        textedit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -120,15 +124,15 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (testedit.getText().toString().equals("")){
+                if (textedit.getText().toString().equals("")){
                     selectpage.setVisibility(View.GONE);
                     sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     //searchList = new ArrayList<>();
                 } else {
-                    if (dbmanager.getSearchList(testedit.getText().toString()) != null) {
+                    if (dbmanager.getSearchList(textedit.getText().toString()) != null) {
                         selectpage.setVisibility(View.VISIBLE);
                         sliding_tabs.setVisibility(SlidingTabLayout.GONE);
-                        searchList = dbmanager.getSearchList(testedit.getText().toString());
+                        searchList = dbmanager.getSearchList(textedit.getText().toString());
                         searchAdapter = new SearchAdapter(searchList, MainActivity.this);
                         selectpage.setAdapter(searchAdapter);
                     } else {
@@ -144,15 +148,15 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
         });
     }
 
-//    @OnTextChanged(R.id.testedit)
-//    public void testedit(){
-//        if (testedit.getText().toString().equals("")){
+//    @OnTextChanged(R.id.textedit)
+//    public void textedit(){
+//        if (textedit.getText().toString().equals("")){
 //            selectpage.setVisibility(View.GONE);
 //            //searchList = new ArrayList<>();
 //        } else {
-//            if (dbmanager.getSearchList(testedit.getText().toString()) != null) {
+//            if (dbmanager.getSearchList(textedit.getText().toString()) != null) {
 //                selectpage.setVisibility(View.VISIBLE);
-//                searchList = dbmanager.getSearchList(testedit.getText().toString());
+//                searchList = dbmanager.getSearchList(textedit.getText().toString());
 //                searchAdapter = new SearchAdapter(searchList, MainActivity.this);
 //                selectpage.setAdapter(searchAdapter);
 //            }
@@ -162,28 +166,34 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
     @Override
     public void onBackPressed() {
-        if (testedit.getVisibility() == View.VISIBLE){
+        if (textedit.getVisibility() == View.VISIBLE){
             sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
-            testedit.setVisibility(View.GONE);
+            textedit.setVisibility(View.GONE);
             selectpage.setVisibility(View.GONE);
-            testedit.setText("");
+            textedit.setText("");
+            logo.setVisibility(View.VISIBLE);
+            appname.setVisibility(View.VISIBLE);
         } else {
             backPressCloseHandler.onBackPressed();
         }
     }
 
     //주석주
-    @OnClick(R.id.testbtn)
-    public void testbtn(View view){
-                if (testedit.getVisibility() == View.GONE){
-                    testedit.setVisibility(View.VISIBLE);
+    @OnClick(R.id.selbtn)
+    public void selbtn(View view){
+                if (textedit.getVisibility() == View.GONE){
+                    textedit.setVisibility(View.VISIBLE);
                     sliding_tabs.setVisibility(SlidingTabLayout.GONE);
                     selectpage.setVisibility(View.VISIBLE);
+                    logo.setVisibility(View.GONE);
+                    appname.setVisibility(View.GONE);
                 } else {
                     sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
-                    testedit.setVisibility(View.GONE);
+                    textedit.setVisibility(View.GONE);
                     selectpage.setVisibility(View.GONE);
-                    testedit.setText("");
+                    textedit.setText("");
+                    logo.setVisibility(View.VISIBLE);
+                    appname.setVisibility(View.VISIBLE);
                 }
 
     }
