@@ -38,6 +38,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_lookaround"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="스마트폰 살펴보기"
@@ -84,6 +85,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_basicfunction"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="기본기능"
@@ -159,6 +161,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_basicsetting"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="기본설정"
@@ -230,6 +233,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:id="@+id/tx_playstore"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
@@ -289,6 +293,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_kakaotalk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="카카오톡"
@@ -355,6 +360,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_internet"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="인터넷활용"
@@ -410,6 +416,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/tx_traffic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="교통정보 검색"
