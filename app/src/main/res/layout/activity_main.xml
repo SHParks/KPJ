@@ -104,7 +104,7 @@
             android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tab_height"
-            android:background="#dadada" />
+            android:background="#E0F8F7" />
 
 
     </LinearLayout>

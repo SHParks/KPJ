@@ -50,7 +50,11 @@ public class ItemList extends Fragment {
 
         return rootview;
     }
-    @OnClick({R.id.btn_lookaround,R.id.btn_basicfunction,R.id.btn_basicsetting,R.id.btn_playstore,R.id.btn_kakaotalk,R.id.btn_internet,R.id.btn_traffic})
+
+
+
+    @OnClick({R.id.btn_lookaround,R.id.btn_basicfunction,R.id.btn_basicsetting,R.id.btn_playstore,R.id.btn_kakaotalk,R.id.btn_internet,R.id.btn_traffic,
+            R.id.tx_lookaround,R.id.tx_basicfunction,R.id.tx_basicsetting,R.id.tx_playstore,R.id.tx_kakaotalk,R.id.tx_internet,R.id.tx_traffic})
     public void onclick(View view){
         switch (view.getId()) {
             case R.id.btn_lookaround:
@@ -90,6 +94,48 @@ public class ItemList extends Fragment {
                     list_internet.setVisibility(View.VISIBLE);
                 } break;
             case R.id.btn_traffic:
+                if(list_traffic.getVisibility()==View.VISIBLE) {
+                    list_traffic.setVisibility(View.GONE);
+                }else if(list_traffic.getVisibility()==View.GONE){
+                    list_traffic.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_lookaround:
+                if (list_lookaround.getVisibility() == View.VISIBLE) {
+                    list_lookaround.setVisibility(View.GONE);
+                } else if (list_lookaround.getVisibility() == View.GONE) {
+                    list_lookaround.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_basicfunction:
+                if(list_basicfunction.getVisibility()==View.VISIBLE) {
+                    list_basicfunction.setVisibility(View.GONE);
+                }else if(list_basicfunction.getVisibility()==View.GONE){
+                    list_basicfunction.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_basicsetting:
+                if(list_basicseting.getVisibility()==View.VISIBLE) {
+                    list_basicseting.setVisibility(View.GONE);
+                }else if(list_basicseting.getVisibility()==View.GONE){
+                    list_basicseting.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_playstore:
+                if(list_playstore.getVisibility()==View.VISIBLE) {
+                    list_playstore.setVisibility(View.GONE);
+                }else if(list_playstore.getVisibility()==View.GONE){
+                    list_playstore.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_kakaotalk:
+                if(list_kakaotalk.getVisibility()==View.VISIBLE) {
+                    list_kakaotalk.setVisibility(View.GONE);
+                }else if(list_kakaotalk.getVisibility()==View.GONE){
+                    list_kakaotalk.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_internet:
+                if(list_internet.getVisibility()==View.VISIBLE) {
+                    list_internet.setVisibility(View.GONE);
+                }else if(list_internet.getVisibility()==View.GONE){
+                    list_internet.setVisibility(View.VISIBLE);
+                } break;
+            case R.id.tx_traffic:
                 if(list_traffic.getVisibility()==View.VISIBLE) {
                     list_traffic.setVisibility(View.GONE);
                 }else if(list_traffic.getVisibility()==View.GONE){
