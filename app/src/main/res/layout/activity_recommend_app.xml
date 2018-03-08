@@ -67,6 +67,7 @@
                     android:id="@+id/downYoutube"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:background="@drawable/down"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="20dp"
@@ -116,6 +117,7 @@
                     android:id="@+id/downKakaoTalk"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:background="@drawable/down"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
@@ -165,6 +167,7 @@
                 <Button
                     android:id="@+id/downKakaoMap"
                     android:layout_width="70dp"
+                    android:background="@drawable/down"
                     android:layout_height="70dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="20dp"
@@ -215,6 +218,7 @@
                 <Button
                     android:id="@+id/downMetro"
                     android:layout_width="70dp"
+                    android:background="@drawable/down"
                     android:layout_height="70dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="20dp"
@@ -267,6 +271,7 @@
                     android:id="@+id/downNaver"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:background="@drawable/down"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
@@ -317,6 +322,7 @@
                     android:id="@+id/downAddressBook"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
+                    android:background="@drawable/down"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
@@ -324,55 +330,7 @@
                     />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/dodolkeyboard"
-                android:visibility="visible"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp">
-                <ImageView
-                    android:id="@+id/dodolkeyboard_img"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/ic_launcher_foreground"
-                    />
-                <TextView
-                    android:id="@+id/dodolkeyboard_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/dodolkeyboard_img"
-                    android:text="네이버"
-                    android:textSize="20dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/dodolkeyboard_name"
-                    android:text="참고"
-                    android:textSize="15dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_alignTop="@id/downdodolkeyboard"
-                    android:layout_marginTop="10dp"
-                    android:text="모바일에 최적화된 네이버앱"
-                    android:textSize="15dp"
-                    />
-                <Button
-                    android:id="@+id/downdodolkeyboard"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:text="down"
-                    />
-            </RelativeLayout>
+
         </LinearLayout>
 
     </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>

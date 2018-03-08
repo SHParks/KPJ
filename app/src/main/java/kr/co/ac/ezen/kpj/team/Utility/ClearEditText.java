@@ -11,6 +11,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import kr.co.ac.ezen.kpj.team.R;
+
 
 /**
  * Created by Administrator on 2018-02-09.
@@ -49,7 +51,8 @@ public class ClearEditText extends AppCompatEditText implements TextWatcher, Vie
 
     private void init() {
 
-        Drawable tempDrawable = ContextCompat.getDrawable(getContext(), android.support.v7.appcompat.R.drawable.abc_ic_menu_share_mtrl_alpha);
+        //Drawable tempDrawable = ContextCompat.getDrawable(getContext(), android.support.v7.appcompat.R.drawable.abc_ic_menu_share_mtrl_alpha);
+        Drawable tempDrawable = ContextCompat.getDrawable(getContext(), R.drawable.textdel);
         clearDrawable = DrawableCompat.wrap(tempDrawable);
         DrawableCompat.setTintList(clearDrawable,getHintTextColors());
         clearDrawable.setBounds(0, 0, clearDrawable.getIntrinsicWidth(), clearDrawable.getIntrinsicHeight());

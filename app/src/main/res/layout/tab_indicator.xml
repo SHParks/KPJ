@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="48dp"
+    android:orientation="vertical">
+
+<TextView
     android:id="@android:id/text1"
     style="@style/ThemeOverlay.AppCompat.Light"
     android:layout_width="wrap_content"
@@ -8,6 +16,16 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:textColor="@color/tab_text_color"
-    android:textSize="14sp" />
+    android:textSize="14sp"
+    />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_centerInParent="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+    <!--여기에 이미지 넣기-->
+
+</RelativeLayout>
 
 

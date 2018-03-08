@@ -37,8 +37,6 @@ public class RecommendApp extends Fragment {
     RelativeLayout naver;
     @BindView(R.id.addressBook)
     RelativeLayout addressBook;
-    @BindView(R.id.dodolkeyboard)
-    RelativeLayout dodolkeyboard;
 
 
     @Nullable
@@ -65,7 +63,6 @@ public class RecommendApp extends Fragment {
         packageList.add("teamDoppelGanger.SmarterSubway");
         packageList.add("com.nhn.android.search");
         packageList.add("com.nhn.android.addressbookbackup");
-        packageList.add("com.google.android.inputmethod.korean");
 
         layoutList.add(youtube);
         layoutList.add(kakaoTalk);
@@ -73,7 +70,6 @@ public class RecommendApp extends Fragment {
         layoutList.add(metro);
         layoutList.add(naver);
         layoutList.add(addressBook);
-        layoutList.add(dodolkeyboard);
 
 
         return rootview;
@@ -93,7 +89,7 @@ public class RecommendApp extends Fragment {
         }
     }
 
-    @OnClick({R.id.downYoutube, R.id.downKakaoTalk, R.id.downKakaoMap, R.id.downMetro, R.id.downNaver, R.id.downAddressBook,R.id.downdodolkeyboard})
+    @OnClick({R.id.downYoutube, R.id.downKakaoTalk, R.id.downKakaoMap, R.id.downMetro, R.id.downNaver, R.id.downAddressBook})
     public void onclick(View view){
         String packageName="";
         switch (view.getId()){
@@ -114,9 +110,6 @@ public class RecommendApp extends Fragment {
                 break;
             case R.id.downAddressBook:
                 packageName = "com.nhn.android.addressbookbackup";
-                break;
-            case R.id.downdodolkeyboard:
-                packageName = "com.google.android.inputmethod.korean";
                 break;
         }
 //        if (InstallCheck.searchAppPackage(getActivity(),packageName)){

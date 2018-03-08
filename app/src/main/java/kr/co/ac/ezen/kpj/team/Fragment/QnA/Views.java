@@ -34,11 +34,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Views extends AppCompatActivity {
-    @BindView(R.id.item_id) TextView item_id;
     @BindView(R.id.item_name) TextView item_name;
     @BindView(R.id.item_title) TextView item_title;
     @BindView(R.id.item_content) TextView item_content;
-    /*@BindView(R.id.item_pw) TextView item_pw;*/
     @BindView(R.id.item_date) TextView item_date;
     @BindView(R.id.item_del) Button item_del;
     @BindView(R.id.item_ip) TextView item_ip;
@@ -138,17 +136,15 @@ public class Views extends AppCompatActivity {
             public void onResponse(Call<Board_Item> call, Response<Board_Item> response) {
                 if (response.isSuccessful()) {
                     item = response.body();
-                    item_id.setText("id:" +item.getId());
-                    item_name.setText(item.getName());
+                    item_name.setText("작성자 : "+item.getName());
                     title = item.getTitle();
                     item_title.setText(title);
                     content = item.getContent();
                     item_content.setText(content);
                     pw = item.getPw();
-                    /*item_pw.setText("패스워드 : "+pw);*/
                     String[] ipcut = item.getIp().split("\\.");
                     String moip = ipcut[0] +"." +ipcut[1]+".*.*";
-                    item_ip.setText(moip);
+                    item_ip.setText("IP : "+moip);
 
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy.MM.dd", Locale.KOREA);
                     String dtime = formatter.format(item.getWritedate());

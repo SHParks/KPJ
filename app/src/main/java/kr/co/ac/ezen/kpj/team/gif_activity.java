@@ -36,6 +36,7 @@ public class gif_activity extends AppCompatActivity {
         Intent intent = getIntent();
         code = intent.getStringExtra("code");
         Log.d("code : ",code);
+        Log.d("shb 패키지명",this.getPackageName());
         GlideDrawableImageViewTarget gifImage = new GlideDrawableImageViewTarget(img_gif);
         Glide.with(this).load(getResources().getIdentifier(code,"drawable",this.getPackageName())).into(gifImage);
         title= dbmanager.gettitle(code);

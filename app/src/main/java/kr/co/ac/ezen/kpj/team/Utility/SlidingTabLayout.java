@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -12,8 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import kr.co.ac.ezen.kpj.team.MainActivity;
+import kr.co.ac.ezen.kpj.team.R;
 
 /**
  * Created by Administrator on 2018-02-07.
@@ -40,11 +46,14 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private int mTabViewLayoutId;
     private int mTabViewTextViewId;
+    private int mTabViewImageViewId; //내가 만드는 이미지뷰 추가중
     private boolean mDistributeEvenly;
 
     private ViewPager mViewPager;
     private SparseArray<String> mContentDescriptions = new SparseArray<String>();
     private ViewPager.OnPageChangeListener mViewPagerPageChangeListener;
+
+    ImageView tabTitleIcon[]  = new ImageView[4];
 
     private final SlidingTabStrip mTabStrip;
 
@@ -70,13 +79,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
         addView(mTabStrip, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     }
 
-    /**
-     * Set the custom {@link com.google.samples.apps.iosched.ui.widget.SlidingTabLayout.TabColorizer} to be used.
-     *
-     * If you only require simple custmisation then you can use
-     * {@link #setSelectedIndicatorColors(int...)} to achieve
-     * similar effects.
-     */
+//    /**
+//     * Set the custom {@link com.google.samples.apps.iosched.ui.widget.SlidingTabLayout.TabColorizer} to be used.
+//     *
+//     * If you only require simple custmisation then you can use
+//     * {@link #setSelectedIndicatorColors(int...)} to achieve
+//     * similar effects.
+//     */
     public void setCustomTabColorizer(TabColorizer tabColorizer) {
         mTabStrip.setCustomTabColorizer(tabColorizer);
     }
@@ -93,13 +102,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
         mTabStrip.setSelectedIndicatorColors(colors);
     }
 
-    /**
-     * Set the {@link android.support.v4.view.ViewPager.OnPageChangeListener}. When using {@link com.google.samples.apps.iosched.ui.widget.SlidingTabLayout} you are
-     * required to set any {@link android.support.v4.view.ViewPager.OnPageChangeListener} through this method. This is so
-     * that the layout can update it's scroll position correctly.
-     *
-     * @see android.support.v4.view.ViewPager#setOnPageChangeListener(android.support.v4.view.ViewPager.OnPageChangeListener)
-     */
+//    /**
+//     * Set the {@link android.support.v4.view.ViewPager.OnPageChangeListener}. When using {@link com.google.samples.apps.iosched.ui.widget.SlidingTabLayout} you are
+//     * required to set any {@link android.support.v4.view.ViewPager.OnPageChangeListener} through this method. This is so
+//     * that the layout can update it's scroll position correctly.
+//     *
+//     * @see android.support.v4.view.ViewPager#setOnPageChangeListener(android.support.v4.view.ViewPager.OnPageChangeListener)
+//     */
     public void setOnPageChangeListener(ViewPager.OnPageChangeListener listener) {
         mViewPagerPageChangeListener = listener;
     }
@@ -110,9 +119,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * @param layoutResId Layout id to be inflated
      * @param textViewId id of the {@link android.widget.TextView} in the inflated view
      */
-    public void setCustomTabView(int layoutResId, int textViewId) {
+    public void setCustomTabView(int layoutResId, int textViewId, int imageViewId) {
         mTabViewLayoutId = layoutResId;
         mTabViewTextViewId = textViewId;
+        mTabViewImageViewId = imageViewId;
     }
 
     /**
@@ -131,7 +141,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     /**
      * Create a default view to be used for tabs. This is called if a custom tab view is not set via
-     * {@link #setCustomTabView(int, int)}.
+     * {@link #setCustomTabView(int, int, int)}.
      */
     protected TextView createDefaultTabView(Context context) {
         TextView textView = new TextView(context);
@@ -153,6 +163,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
         return textView;
     }
 
+    String[] Icons = {"list1","follow1","question1","recommend1"};
+    String[] ClickIcons = {"list2","follow2","question2","recommend2"};
+    String packName="kr.co.ac.ezen.kpj.team";
     private void populateTabStrip() {
         final PagerAdapter adapter = mViewPager.getAdapter();
         final OnClickListener tabClickListener = new TabClickListener();
@@ -161,11 +174,16 @@ public class SlidingTabLayout extends HorizontalScrollView {
             View tabView = null;
             TextView tabTitleView = null;
 
+
             if (mTabViewLayoutId != 0) {
                 // If there is a custom tab view layout id set, try and inflate it
                 tabView = LayoutInflater.from(getContext()).inflate(mTabViewLayoutId, mTabStrip,
                         false);
                 tabTitleView = (TextView) tabView.findViewById(mTabViewTextViewId);
+                //tabTitleView.setBackgroundResource(getResources().getIdentifier(Icons[i],"drawable", packName));
+
+                tabTitleIcon[i] = (ImageView) tabView.findViewById(mTabViewImageViewId);
+                //tabTitleIcon.setImageResource(getResources().getIdentifier(Icons[i],"drawable", packName));
             }
 
             if (tabView == null) {
@@ -174,7 +192,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             if (tabTitleView == null && TextView.class.isInstance(tabView)) {
                 tabTitleView = (TextView) tabView;
+                tabTitleIcon[i] = (ImageView) tabView;
             }
+
 
             if (mDistributeEvenly) {
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) tabView.getLayoutParams();
@@ -182,8 +202,32 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 lp.weight = 1;
             }
 
-            tabTitleView.setText(adapter.getPageTitle(i));
+            if (mTabViewLayoutId != 0) {
+                //tabTitleView.setText(adapter.getPageTitle(i));
+                tabTitleIcon[i].setImageResource(getResources().getIdentifier(Icons[i], "drawable", packName));
+                tabTitleIcon[0].setImageResource(getResources().getIdentifier(ClickIcons[0], "drawable", packName));
+            }
+
             tabView.setOnClickListener(tabClickListener);
+//            tabView.setOnClickListener(new OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    for (int i = 0; i < mTabStrip.getChildCount(); i++) {
+//                        if (v == mTabStrip.getChildAt(i)) {
+//                            mViewPager.setCurrentItem(i);
+//                            for (int j = 0 ; j<mTabStrip.getChildCount() ; j++){
+//                                tabTitleIcon[j].setImageResource(getResources().getIdentifier(Icons[j], "drawable", packName));
+//                            }
+//                            tabTitleIcon[i].setImageResource(getResources().getIdentifier(ClickIcons[i], "drawable", packName));
+//
+//                            Log.d("shb 클릭한 번째 : ",i+"");
+//                            return;
+//                        }
+//                    }
+//                }
+//            });
+
+
             String desc = mContentDescriptions.get(i, null);
             if (desc != null) {
                 tabView.setContentDescription(desc);
@@ -215,6 +259,15 @@ public class SlidingTabLayout extends HorizontalScrollView {
             return;
         }
 
+
+        tabTitleIcon[tabIndex].setImageResource(getResources().getIdentifier(ClickIcons[tabIndex], "drawable", packName));
+        for (int j = 0 ; j<mTabStrip.getChildCount() ; j++){
+            if (j!=tabIndex){
+                tabTitleIcon[j].setImageResource(getResources().getIdentifier(Icons[j], "drawable", packName));
+            }
+        }
+
+
         View selectedChild = mTabStrip.getChildAt(tabIndex);
         if (selectedChild != null) {
             int targetScrollX = selectedChild.getLeft() + positionOffset;
@@ -228,6 +281,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
         }
     }
 
+
+
+
     private class InternalViewPagerListener implements ViewPager.OnPageChangeListener {
         private int mScrollState;
 
@@ -239,6 +295,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
             }
 
             mTabStrip.onViewPagerPageChanged(position, positionOffset);
+
 
             View selectedTitle = mTabStrip.getChildAt(position);
             int extraOffset = (selectedTitle != null)
@@ -258,7 +315,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             if (mViewPagerPageChangeListener != null) {
                 mViewPagerPageChangeListener.onPageScrollStateChanged(state);
+
             }
+
         }
 
         @Override
@@ -273,6 +332,21 @@ public class SlidingTabLayout extends HorizontalScrollView {
             if (mViewPagerPageChangeListener != null) {
                 mViewPagerPageChangeListener.onPageSelected(position);
             }
+            switch (position){
+                case 0:
+                    Toast list =  Toast.makeText(getContext(), "목록", Toast.LENGTH_SHORT);
+                    list.show();
+                    break;
+                case 1:
+                    Toast.makeText(getContext(), "A to Z", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    Toast.makeText(getContext(), "Q & A", Toast.LENGTH_SHORT).show();
+                    break;
+                case 3:
+                    Toast.makeText(getContext(), "추천 앱", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
 
     }
@@ -283,6 +357,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
             for (int i = 0; i < mTabStrip.getChildCount(); i++) {
                 if (v == mTabStrip.getChildAt(i)) {
                     mViewPager.setCurrentItem(i);
+                    //tabTitleIcon.setImageResource(getResources().getIdentifier(ClickIcons[i], "drawable", packName));
+
+                    Log.d("shb 클릭한 번째 : ",i+"");
                     return;
                 }
             }

@@ -16,6 +16,7 @@ import kr.co.ac.ezen.kpj.team.Fragment.QnA.Index;
 public class NavigationAdapter extends CacheFragmentStatePagerAdapter {
 
     private static final String[] TITLES = new String[]{"목록", "따라하기","QnA","추천앱"};
+    private static final String[] Icons = new String[]{"kakaotalk","kakaomap","naver","metro"};
 
     private int mScrollY;
 
@@ -79,10 +80,8 @@ public class NavigationAdapter extends CacheFragmentStatePagerAdapter {
         return TITLES[position];
     }
 
-
-
-
-
-
+    public CharSequence getPageImage(int position) {
+        return Icons[position];
+    }
 
 }

@@ -35,6 +35,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_lookaround"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="스마트폰 살펴보기"
@@ -42,13 +43,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_lookaround"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -57,18 +51,20 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="30dp"
                             android:orientation="vertical"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:layout_marginTop="50dp">
                             <TextView
                                 android:id="@+id/tx_lookaround_hardware"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 외부구조와 버튼"/>
 
                             <TextView
                                 android:id="@+id/tx_lookaround_gesture"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 스마트 사용" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -80,6 +76,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_basicfunction"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="기본기능"
@@ -87,13 +84,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_basicfunction"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -102,47 +92,55 @@
                             android:layout_marginLeft="30dp"
                             android:orientation="vertical"
                             android:layout_marginTop="50dp"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:id="@+id/list_basicfunction">
                             <TextView
                                 android:id="@+id/tx_basicfunction_contact"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 연락처 저장"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_call"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 전화걸기"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_call2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 연락처를 통한 전화걸기"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_message"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 문자보내기"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_message2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 연락처를 통한 문자보내기"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_camera"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 사진 촬영"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_video"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 동영상 촬영"/>
                             <TextView
                                 android:id="@+id/tx_basicfunction_album"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 앨범보기"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -154,6 +152,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_basicsetting"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="기본설정"
@@ -161,13 +160,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_basicsetting"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -182,32 +174,38 @@
                                 android:id="@+id/tx_basicsetting_textsize"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 글자크기 설정"/>
                             <TextView
                                 android:id="@+id/tx_basicsetting_brightness"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 화면밝기 설정" />
                             <TextView
                                 android:id="@+id/tx_basicsetting_colouring"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 벨소리 변경" />
                             <TextView
                                 android:id="@+id/tx_basicsetting_sound"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 음량크기 설정"/>
 
                             <TextView
                                 android:id="@+id/tx_basicsetting_alarm"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 알람 설정"/>
                             <TextView
                                 android:id="@+id/tx_basicsetting_display"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 배경화면 변경"/>
 
                         </LinearLayout>
@@ -220,6 +218,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_playstore"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="플레이스토어(어플) 활용법"
@@ -227,13 +226,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_playstore"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -248,21 +240,25 @@
                                 android:id="@+id/tx_playstore_basic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 기본설명"/>
+                                android:textSize="20dp"
+                                android:text="- 기본설명-플레이스토어"/>
                             <TextView
                                 android:id="@+id/tx_playstore_search"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 구글스토어 접속/검색"/>
                             <TextView
                                 android:id="@+id/tx_playstore_install"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 어플리케이션 설치"/>
                             <TextView
                                 android:id="@+id/tx_playstore_delete"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 어플리케이션 삭제"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -274,6 +270,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_kakaotalk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="카카오톡"
@@ -281,13 +278,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_kakaotalk"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -302,32 +292,38 @@
                                 android:id="@+id/tx_kakaotalk_basic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 기본설명"/>
+                                android:textSize="20dp"
+                                android:text="- 기본설명-카카오톡"/>
                             <TextView
                                 android:id="@+id/tx_kakaotalk_profile"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 프로필 등록"/>
                             <TextView
                                 android:id="@+id/tx_kakaotalk_text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 문자보내기"/>
 
                             <TextView
                                 android:id="@+id/tx_kakaotalk_album"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 사진보내기"/>
                             <TextView
                                 android:id="@+id/tx_kakaotalk_voice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 음성보내기"/>
                             <TextView
                                 android:id="@+id/tx_kakaotalk_group"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 단체카톡방 초대"/>
 
                         </LinearLayout>
@@ -339,6 +335,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_internet"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="인터넷활용"
@@ -346,13 +343,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_internet"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -367,21 +357,25 @@
                                 android:id="@+id/tx_internet_basic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 기본설명"/>
+                                android:textSize="20dp"
+                                android:text="- 기본설명-인터넷"/>
                             <TextView
                                 android:id="@+id/tx_internet_use"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 기본인터넷 사용"/>
                             <TextView
                                 android:id="@+id/tx_internet_use2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 어플리케이션을 활용한 검색"/>
                             <TextView
                                 android:id="@+id/tx_internet_favorite"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 즐겨찾기 등록"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -393,6 +387,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
                             <TextView
+                                android:id="@+id/btn_traffic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="교통정보 검색"
@@ -400,13 +395,6 @@
                                 android:textSize="30dp"
                                 android:layout_marginLeft="20dp"/>
 
-                            <Button
-                                android:id="@+id/btn_traffic"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:background="@mipmap/ic_launcher_round"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginLeft="5dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -421,16 +409,19 @@
                                 android:id="@+id/tx_traffic_basic"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="- 기본설명"/>
+                                android:textSize="20dp"
+                                android:text="- 기본설명-교통정보"/>
                             <TextView
                                 android:id="@+id/tx_traffic_search"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 어플리케이션을 활용한 길찾기"/>
                             <TextView
                                 android:id="@+id/tx_traffic_subway"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textSize="20dp"
                                 android:text="- 지하철노선도 검색"/>
                         </LinearLayout>
                     </RelativeLayout>

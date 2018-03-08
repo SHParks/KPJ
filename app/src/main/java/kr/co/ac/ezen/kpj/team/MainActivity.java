@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
 
         SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
-        slidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
-        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.accent));
+        slidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1,R.id.image1);
+        slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.hairo));
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(mPager);
 
@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
             textedit.setText("");
             logo.setVisibility(View.VISIBLE);
             appname.setVisibility(View.VISIBLE);
+            selbtn.setBackgroundResource(R.drawable.find1);
         } else {
             backPressCloseHandler.onBackPressed();
         }
@@ -189,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
                     selectpage.setVisibility(View.VISIBLE);
                     logo.setVisibility(View.GONE);
                     appname.setVisibility(View.GONE);
+                    selbtn.setBackgroundResource(R.drawable.find2);
                     InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                     textedit.requestFocus();
@@ -199,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
                     textedit.setText("");
                     logo.setVisibility(View.VISIBLE);
                     appname.setVisibility(View.VISIBLE);
+                    selbtn.setBackgroundResource(R.drawable.find1);
                     InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 }

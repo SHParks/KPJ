@@ -7,5 +7,7 @@
     <color name="primaryDark">#00796b</color>
     <color name="accent">#533900</color>
     <color name="accentLight">#F4FF81</color>
+    <color name="bk">#000000</color>
+    <color name="hairo">#737373</color>
 
 </resources>
