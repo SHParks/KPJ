@@ -105,12 +105,14 @@
                     android:layout_height="35dp" />
 
             </RelativeLayout>
-
         </android.support.v7.widget.Toolbar>
 
 
 
-
+        <View
+            android:background="#c6c6c6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
         <kr.co.ac.ezen.kpj.team.Utility.SlidingTabLayout
             android:id="@+id/sliding_tabs"
             android:visibility="visible"

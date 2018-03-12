@@ -28,6 +28,8 @@ public class DBmanager extends SQLiteOpenHelper {
 //        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround_hardware','외부구조와 버튼','아직내용은 미정');");
 //        sqLiteDatabase.execSQL("Insert into Category values(null,'lookaround_gesture','스마트폰 사용법','아직내용은 미정');");
 
+        Log.d("shb 들어옴","들어옴");
+
         sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_contact','연락처 저장','1. 전화 어플을 켭니다.\n2. 저장하실 전화번호를 입력 하신 후 추가 버튼을 누릅니다.\n3. 이름을 입력 후 저장을 누릅니다.');");
         sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_call','전화걸기','전화번호를 입력 후 통화 버튼을 누릅니다.');");
         sqLiteDatabase.execSQL("Insert into Category values(null,'basicfunction_call2','연락처를 통한 전화걸기','1. 연락처를 켭니다.\n2. 전화거실 상대방을 확인 후 통화 버튼을 누릅니다.');");

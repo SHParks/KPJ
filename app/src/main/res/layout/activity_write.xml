@@ -16,14 +16,18 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title"
+            android:text="제목 :  "
             />
         <EditText
             android:id="@+id/et_title"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             />
     </LinearLayout>
+    <View
+        android:background="#bebebe"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +37,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/writer"
+            android:text="작성자 :  "
             />
         <EditText
             android:id="@+id/et_writer"
@@ -41,6 +45,10 @@
             android:layout_height="wrap_content"
             />
     </LinearLayout>
+    <View
+        android:background="#bebebe"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,7 +58,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀번호 : "
+            android:text="비밀번호 :  "
             />
         <EditText
             android:id="@+id/et_pw"
@@ -59,6 +67,10 @@
             android:layout_height="wrap_content"
             />
     </LinearLayout>
+    <View
+        android:background="#bebebe"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <TextView
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
@@ -69,6 +81,10 @@
         android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
+    <View
+        android:background="#bebebe"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
     <RelativeLayout
         android:layout_marginTop="20dp"
