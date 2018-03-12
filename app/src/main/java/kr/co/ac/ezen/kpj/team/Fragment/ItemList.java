@@ -22,7 +22,7 @@ import kr.co.ac.ezen.kpj.team.R;
 import kr.co.ac.ezen.kpj.team.gif_activity;
 
 public class ItemList extends Fragment {
-    @BindView(R.id.list_lookaround) LinearLayout list_lookaround;
+    //@BindView(R.id.list_lookaround) LinearLayout list_lookaround;
     @BindView(R.id.list_basicfunction) LinearLayout list_basicfunction;
     @BindView(R.id.list_basicsetting) LinearLayout list_basicseting;
     @BindView(R.id.list_playstore) LinearLayout list_playstore;
@@ -53,16 +53,9 @@ public class ItemList extends Fragment {
 
 
 
-    @OnClick({R.id.btn_lookaround,R.id.btn_basicfunction,R.id.btn_basicsetting,R.id.btn_playstore,R.id.btn_kakaotalk,R.id.btn_internet,R.id.btn_traffic,
-            R.id.tx_lookaround,R.id.tx_basicfunction,R.id.tx_basicsetting,R.id.tx_playstore,R.id.tx_kakaotalk,R.id.tx_internet,R.id.tx_traffic})
+    @OnClick({R.id.btn_basicfunction,R.id.btn_basicsetting,R.id.btn_playstore,R.id.btn_kakaotalk,R.id.btn_internet,R.id.btn_traffic})
     public void onclick(View view){
         switch (view.getId()) {
-            case R.id.btn_lookaround:
-                if (list_lookaround.getVisibility() == View.VISIBLE) {
-                    list_lookaround.setVisibility(View.GONE);
-                } else if (list_lookaround.getVisibility() == View.GONE) {
-                    list_lookaround.setVisibility(View.VISIBLE);
-                } break;
             case R.id.btn_basicfunction:
                 if(list_basicfunction.getVisibility()==View.VISIBLE) {
                     list_basicfunction.setVisibility(View.GONE);
@@ -99,52 +92,52 @@ public class ItemList extends Fragment {
                 }else if(list_traffic.getVisibility()==View.GONE){
                     list_traffic.setVisibility(View.VISIBLE);
                 } break;
-            case R.id.tx_lookaround:
-                if (list_lookaround.getVisibility() == View.VISIBLE) {
-                    list_lookaround.setVisibility(View.GONE);
-                } else if (list_lookaround.getVisibility() == View.GONE) {
-                    list_lookaround.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_basicfunction:
-                if(list_basicfunction.getVisibility()==View.VISIBLE) {
-                    list_basicfunction.setVisibility(View.GONE);
-                }else if(list_basicfunction.getVisibility()==View.GONE){
-                    list_basicfunction.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_basicsetting:
-                if(list_basicseting.getVisibility()==View.VISIBLE) {
-                    list_basicseting.setVisibility(View.GONE);
-                }else if(list_basicseting.getVisibility()==View.GONE){
-                    list_basicseting.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_playstore:
-                if(list_playstore.getVisibility()==View.VISIBLE) {
-                    list_playstore.setVisibility(View.GONE);
-                }else if(list_playstore.getVisibility()==View.GONE){
-                    list_playstore.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_kakaotalk:
-                if(list_kakaotalk.getVisibility()==View.VISIBLE) {
-                    list_kakaotalk.setVisibility(View.GONE);
-                }else if(list_kakaotalk.getVisibility()==View.GONE){
-                    list_kakaotalk.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_internet:
-                if(list_internet.getVisibility()==View.VISIBLE) {
-                    list_internet.setVisibility(View.GONE);
-                }else if(list_internet.getVisibility()==View.GONE){
-                    list_internet.setVisibility(View.VISIBLE);
-                } break;
-            case R.id.tx_traffic:
-                if(list_traffic.getVisibility()==View.VISIBLE) {
-                    list_traffic.setVisibility(View.GONE);
-                }else if(list_traffic.getVisibility()==View.GONE){
-                    list_traffic.setVisibility(View.VISIBLE);
-                } break;
+//            case R.id.tx_lookaround:
+//                if (list_lookaround.getVisibility() == View.VISIBLE) {
+//                    list_lookaround.setVisibility(View.GONE);
+//                } else if (list_lookaround.getVisibility() == View.GONE) {
+//                    list_lookaround.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_basicfunction:
+//                if(list_basicfunction.getVisibility()==View.VISIBLE) {
+//                    list_basicfunction.setVisibility(View.GONE);
+//                }else if(list_basicfunction.getVisibility()==View.GONE){
+//                    list_basicfunction.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_basicsetting:
+//                if(list_basicseting.getVisibility()==View.VISIBLE) {
+//                    list_basicseting.setVisibility(View.GONE);
+//                }else if(list_basicseting.getVisibility()==View.GONE){
+//                    list_basicseting.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_playstore:
+//                if(list_playstore.getVisibility()==View.VISIBLE) {
+//                    list_playstore.setVisibility(View.GONE);
+//                }else if(list_playstore.getVisibility()==View.GONE){
+//                    list_playstore.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_kakaotalk:
+//                if(list_kakaotalk.getVisibility()==View.VISIBLE) {
+//                    list_kakaotalk.setVisibility(View.GONE);
+//                }else if(list_kakaotalk.getVisibility()==View.GONE){
+//                    list_kakaotalk.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_internet:
+//                if(list_internet.getVisibility()==View.VISIBLE) {
+//                    list_internet.setVisibility(View.GONE);
+//                }else if(list_internet.getVisibility()==View.GONE){
+//                    list_internet.setVisibility(View.VISIBLE);
+//                } break;
+//            case R.id.tx_traffic:
+//                if(list_traffic.getVisibility()==View.VISIBLE) {
+//                    list_traffic.setVisibility(View.GONE);
+//                }else if(list_traffic.getVisibility()==View.GONE){
+//                    list_traffic.setVisibility(View.VISIBLE);
+//                } break;
         }
     }
 
-    @OnClick({R.id.tx_lookaround_hardware,R.id.tx_lookaround_gesture,R.id.tx_basicfunction_contact, R.id.tx_basicfunction_call,
+    @OnClick({R.id.tx_basicfunction_contact, R.id.tx_basicfunction_call,
             R.id.tx_basicfunction_call2,R.id.tx_basicfunction_message,R.id.tx_basicfunction_message2,R.id.tx_basicfunction_camera,
             R.id.tx_basicfunction_video,R.id.tx_basicfunction_album,R.id.tx_basicsetting_textsize,
             R.id.tx_basicsetting_brightness,R.id.tx_basicsetting_colouring,R.id.tx_basicsetting_sound,R.id.tx_basicsetting_alarm,R.id.tx_basicsetting_display,
@@ -154,18 +147,8 @@ public class ItemList extends Fragment {
 
     public void onclicku(View view){
         switch (view.getId()) {
-            case R.id.tx_lookaround_hardware:
-                Intent intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("code","lookaround_hardware");
-                startActivity(intent);
-                break;
-            case R.id.tx_lookaround_gesture:
-                intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("code","lookaround_gesture");
-                startActivity(intent);
-                break;
             case R.id.tx_basicfunction_contact:
-                intent = new Intent(getActivity(),gif_activity.class);
+                Intent intent = new Intent(getActivity(),gif_activity.class);
                 intent.putExtra("code","basicfunction_contact");
                 startActivity(intent);
                 break;
@@ -192,7 +175,7 @@ public class ItemList extends Fragment {
             case R.id.tx_basicfunction_camera:
                 intent = new Intent(getActivity(),gif_activity.class);
                 intent.putExtra("code","basicfunction_camera");
-                intent.putExtra("code","gesture");
+                //intent.putExtra("code","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicfunction_video:
@@ -202,8 +185,8 @@ public class ItemList extends Fragment {
                 break;
             case R.id.tx_basicfunction_album:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("code1","basicfunction_album");
-                intent.putExtra("code2","gesture");
+                intent.putExtra("code","basicfunction_album");
+                //intent.putExtra("code2","gesture");
                 startActivity(intent);
                 break;
             case R.id.tx_basicsetting_textsize:
@@ -243,7 +226,7 @@ public class ItemList extends Fragment {
                 break;
             case R.id.tx_playstore_search:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("id","playstore_search");
+                intent.putExtra("code","playstore_search");
                 startActivity(intent);
                 break;
             case R.id.tx_playstore_install:
@@ -258,7 +241,7 @@ public class ItemList extends Fragment {
                 break;
             case R.id.tx_kakaotalk_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("code","playstore_basic");
+                intent.putExtra("code","kakaotalk_basic");
                 startActivity(intent);
                 break;
             case R.id.tx_kakaotalk_profile:
@@ -288,7 +271,7 @@ public class ItemList extends Fragment {
                 break;
             case R.id.tx_internet_basic:
                 intent = new Intent(getActivity(),gif_activity.class);
-                intent.putExtra("code","internet_basice");
+                intent.putExtra("code","internet_basic");
                 startActivity(intent);
                 break;
             case R.id.tx_internet_use:

@@ -2,6 +2,7 @@ package kr.co.ac.ezen.kpj.team.Fragment;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -9,14 +10,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
 
+import kr.co.ac.ezen.kpj.team.Follow_activity;
 import kr.co.ac.ezen.kpj.team.R;
 
 public class Follow extends Fragment {
+    Button move;
     public static final String ARG_SCROLL_Y = "ARG_SCROLL_Y";
 
     @Nullable
@@ -25,6 +29,13 @@ public class Follow extends Fragment {
         ViewGroup rootview = (ViewGroup)inflater.inflate(R.layout.activity_follow,container,false);
         final ObservableScrollView scrollView = (ObservableScrollView) rootview.findViewById(R.id.scroll);
         Activity parentActivity = getActivity();
+        move = rootview.findViewById(R.id.move_follow);
+        move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Follow_activity.class));
+            }
+        });
 
         if (parentActivity instanceof ObservableScrollViewCallbacks) {
             // Scroll to the specified offset after layout

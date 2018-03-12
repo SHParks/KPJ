@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.util.Log;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class InstallCheck {
         try{
             for(int i=0;i<mAppList.size();i++){
                 if(mAppList.get(i).activityInfo.packageName.startsWith(packageName)){
+                    Log.d("shb 앱 이름 : ",mAppList.get(i).toString());
                     bExist = true;
                     break;
                 }

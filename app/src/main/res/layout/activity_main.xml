@@ -55,19 +55,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp">
 
+
+                <ImageView
+                    android:id="@+id/backbtn"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back"
+                    android:visibility="gone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
                 <kr.co.ac.ezen.kpj.team.Utility.ClearEditText
                     android:id="@+id/textedit"
                     android:layout_width="250dp"
+                    android:layout_marginLeft="35dp"
                     android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:textCursorDrawable="@null"
                     />
 
+
+
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_centerVertical="true"
                     android:text="메인로고"
-                    android:src="@drawable/icon2"
+                    android:src="@drawable/icon"
                     android:layout_width="30dp"
                     android:layout_height="30dp" />
                 <TextView
@@ -104,7 +116,7 @@
             android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="@dimen/tab_height"
-            android:background="#E0F8F7" />
+            android:background="#dadada" />
 
 
     </LinearLayout>

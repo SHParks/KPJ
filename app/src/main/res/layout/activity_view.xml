@@ -36,11 +36,13 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/item_date"
+                android:text="날짜"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/item_ip"
+                android:text="ip"
                 android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -140,6 +142,7 @@
                     android:layout_height="wrap_content">
                     <TextView
                         android:text="작성자 : "
+                        android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <EditText
@@ -161,6 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:text="댓글 : "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

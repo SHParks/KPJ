@@ -11,6 +11,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     ImageView logo;
     @BindView(R.id.appname)
     TextView appname;
-    boolean focus = false;
+    @BindView(R.id.backbtn)  ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
             @Override
             public void afterTextChanged(Editable s) {
                 if (textedit.getText().toString().equals("")){
-                    selectpage.setVisibility(View.GONE);
-                    sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
+//                    selectpage.setVisibility(View.GONE);
+//                    sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     //searchList = new ArrayList<>();
                 } else {
                     if (dbmanager.getSearchList(textedit.getText().toString()) != null) {
@@ -176,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
             logo.setVisibility(View.VISIBLE);
             appname.setVisibility(View.VISIBLE);
             selbtn.setBackgroundResource(R.drawable.find1);
+            backbtn.setVisibility(View.VISIBLE);
         } else {
             backPressCloseHandler.onBackPressed();
         }
@@ -191,9 +193,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
                     logo.setVisibility(View.GONE);
                     appname.setVisibility(View.GONE);
                     selbtn.setBackgroundResource(R.drawable.find2);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                     textedit.requestFocus();
+                    backbtn.setVisibility(View.VISIBLE);
                 } else { //에디트 텍스트가 보일 때
                     sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
                     textedit.setVisibility(View.GONE);
@@ -202,10 +203,21 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
                     logo.setVisibility(View.VISIBLE);
                     appname.setVisibility(View.VISIBLE);
                     selbtn.setBackgroundResource(R.drawable.find1);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+                    backbtn.setVisibility(View.GONE);
                 }
 
+    }
+
+    @OnClick(R.id.backbtn)
+    public void backbtn(View view){
+        sliding_tabs.setVisibility(SlidingTabLayout.VISIBLE);
+        textedit.setVisibility(View.GONE);
+        selectpage.setVisibility(View.GONE);
+        textedit.setText("");
+        logo.setVisibility(View.VISIBLE);
+        appname.setVisibility(View.VISIBLE);
+        selbtn.setBackgroundResource(R.drawable.find1);
+        backbtn.setVisibility(View.GONE);
     }
 
 

@@ -13,16 +13,15 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title"
-            android:layout_margin="10dp"
             />
         <EditText
             android:id="@+id/et_title"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             />
     </LinearLayout>
     <LinearLayout
@@ -31,16 +30,15 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/writer"
-            android:layout_margin="10dp"
             />
         <EditText
             android:id="@+id/et_writer"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             />
     </LinearLayout>
     <LinearLayout
@@ -49,40 +47,50 @@
         android:orientation="horizontal"
         >
         <TextView
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀번호"
-            android:layout_margin="10dp"
+            android:text="비밀번호 : "
             />
         <EditText
             android:id="@+id/et_pw"
             android:inputType="textPassword"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             />
     </LinearLayout>
     <TextView
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/content"
-        android:layout_margin="10dp"
+        android:text="내용 : "
         />
     <EditText
         android:id="@+id/et_content"
         android:layout_width="match_parent"
         android:layout_height="100dp" />
-    <Button
-        android:id="@+id/btn_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="첨부"
-        />
 
-    <Button
-        android:id="@+id/btn_write"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="글쓰기"
-        />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="첨부"
+            />
+
+        <Button
+            android:id="@+id/btn_write"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="글쓰기"
+            />
+    </RelativeLayout>
+
 </LinearLayout>

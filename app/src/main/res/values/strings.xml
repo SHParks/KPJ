@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">KPJ</string>
 
-        <string name="price">가격 : </string>
-        <string name="goods_name">상품명 : </string>
+    <string name="price">가격 : </string>
+    <string name="goods_name">상품명 : </string>
 
-        <string name="title">제목 : </string>
-        <string name="writer">작성자 : </string>
-        <string name="content">글 내용 : </string>
+    <string name="title">제목 : </string>
+    <string name="writer">작성자 : </string>
+    <string name="content">글 내용 : </string>
 
 </resources>
