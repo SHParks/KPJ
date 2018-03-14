@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
             logo.setVisibility(View.VISIBLE);
             appname.setVisibility(View.VISIBLE);
             selbtn.setBackgroundResource(R.drawable.find1);
-            backbtn.setVisibility(View.VISIBLE);
+            backbtn.setVisibility(View.GONE);
         } else {
             backPressCloseHandler.onBackPressed();
         }
