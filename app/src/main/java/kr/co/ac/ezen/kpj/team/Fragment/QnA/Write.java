@@ -40,6 +40,8 @@ public class Write extends AppCompatActivity {
     Button btn_write;
     @BindView(R.id.et_pw)
     EditText et_pw;
+    @BindView(R.id.btn_can)
+            Button btn_can;
 
     MultipartBody.Part filePart = null;
     RequestBody titleBody= null;
@@ -53,6 +55,14 @@ public class Write extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write);
         ButterKnife.bind(this);
+
+        btn_can.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     @OnClick(R.id.btn_add)

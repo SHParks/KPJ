@@ -37,6 +37,7 @@ public class Delete extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setFinishOnTouchOutside(false);
         setContentView(R.layout.activity_delete);
         ButterKnife.bind(this);
 

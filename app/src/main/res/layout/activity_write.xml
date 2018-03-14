@@ -100,9 +100,18 @@
             />
 
         <Button
+            android:id="@+id/btn_can"
+            android:layout_below="@+id/btn_add"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            />
+
+        <Button
             android:id="@+id/btn_write"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/btn_add"
+            android:layout_below="@+id/btn_can"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="글쓰기"

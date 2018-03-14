@@ -25,8 +25,8 @@
         <activity android:name=".Fragment.RecommendApp" />
         <activity android:name=".gif_activity" />
         <activity android:name=".Fragment.QnA.Index"></activity>
-        <activity android:name=".Fragment.QnA.Delete" />
-        <activity android:name=".Fragment.QnA.Edit" />
+        <activity android:name=".Fragment.QnA.Delete" android:theme="@style/popup" />
+        <activity android:name=".Fragment.QnA.Edit" android:theme="@style/popup"/>
         <activity android:name=".Fragment.QnA.Views" />
         <activity android:name=".Fragment.QnA.Write" />
         <activity android:name=".Follow_activity"></activity>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +23,7 @@ import retrofit2.Response;
 
 public class Edit extends AppCompatActivity {
     @BindView(R.id.edit_check)
-    LinearLayout edit_check;
+    RelativeLayout edit_check;
     @BindView(R.id.check_type)
     TextView check_type;
     @BindView(R.id.check_content)
@@ -52,6 +53,7 @@ public class Edit extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setFinishOnTouchOutside(false);
         setContentView(R.layout.activity_edit);
         ButterKnife.bind(this);
         Intent intent = getIntent();
